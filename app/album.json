@@ -1,0 +1,365 @@
+//Response from http://ws.spotify.com/search/1/album.json?q=artist%3ABat+for+Lashes+album%3AThe+Haunted+Man
+{
+  "info": {
+    "num_results": 3,
+    "limit": 100,
+    "offset": 0,
+    "query": "artist:Bat for Lashes album:The Haunted Man",
+    "type": "album",
+    "page": 1
+  },
+  "albums": [
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:6rg92rv1hTB5fDfm85cWgq",
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AT AW AX AZ BA BB BD BE BF BG BH BI BJ BL BN BO BR BS BT BV BW BY BZ CD CF CG CH CI CL CM CN CO CR CU CV CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GM GN GP GQ GR GS GT GW GY HK HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH ML MN MO MQ MR MS MT MU MV MW MX MY MZ NA NC NE NG NI NL NO NP NR OM PA PE PF PG PH PK PL PN PR PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TL TM TN TO TR TT TV TW TZ UA UG UY UZ VC VE VG VN VU WF WS YE YT ZA ZM ZW ZZ"
+      },
+      "name": "The Haunted Man",
+      "popularity": "0.79779"
+    },
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:2pVFhlSkTgwzENzK1j21l1",
+      "availability": {
+        "territories": "AS CA GU MP PR UM US VI"
+      },
+      "name": "The Haunted Man",
+      "popularity": "0.76616"
+    },
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:5oGnsIdK6MNnm2OEHnOG4Z",
+      "availability": {
+        "territories": "AU CC CK CX HM NF NU NZ TK"
+      },
+      "name": "The Haunted Man",
+      "popularity": "0.62006"
+    }
+  ]
+}
+
+
+
+//Response from http://ws.spotify.com/search/1/album.json?q=artist%3ABat+for+Lashes
+{
+  "info": {
+    "num_results": 18,
+    "limit": 100,
+    "offset": 0,
+    "query": "artist:Bat for Lashes",
+    "type": "album",
+    "page": 1
+  },
+  "albums": [
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:6rg92rv1hTB5fDfm85cWgq",
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AT AW AX AZ BA BB BD BE BF BG BH BI BJ BL BN BO BR BS BT BV BW BY BZ CD CF CG CH CI CL CM CN CO CR CU CV CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GM GN GP GQ GR GS GT GW GY HK HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH ML MN MO MQ MR MS MT MU MV MW MX MY MZ NA NC NE NG NI NL NO NP NR OM PA PE PF PG PH PK PL PN PR PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TL TM TN TO TR TT TV TW TZ UA UG UY UZ VC VE VG VN VU WF WS YE YT ZA ZM ZW ZZ"
+      },
+      "name": "The Haunted Man",
+      "popularity": "0.79779"
+    },
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:2pVFhlSkTgwzENzK1j21l1",
+      "availability": {
+        "territories": "AS CA GU MP PR UM US VI"
+      },
+      "name": "The Haunted Man",
+      "popularity": "0.76616"
+    },
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:7cj1dERc5yhFBqtxlRYGSe",
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AS AT AU AW AZ BA BB BD BE BF BG BH BI BJ BL BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GH GI GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IN IO IQ IR IS IT JM JO JP KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH ML MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ZZ"
+      },
+      "name": "Two Suns",
+      "popularity": "0.73261"
+    },
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:0MBMbIshl7jfto6yWs8BFN",
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH ML MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ZZ"
+      },
+      "name": "Fur And Gold",
+      "popularity": "0.68754"
+    },
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:0EzOhMRAdpVVJzqu2TLtz3",
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AS AT AU AW AZ BA BB BD BE BF BG BH BI BJ BL BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GH GI GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IN IO IQ IR IS IT JM JO JP KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH ML MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ZZ"
+      },
+      "name": "Daniel",
+      "popularity": "0.67137"
+    },
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:5GpoOvZNzNScecBzDk3V1e",
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BN BO BR BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FM FO FR GA GD GE GF GH GM GN GP GQ GR GT GU GW GY HK HM HN HR HT HU ID IL IN IQ IR IS IT JM JO KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH ML MN MO MP MQ MR MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PR PT PW PY QA RE RO RS RU RW SA SC SD SE SG SI SJ SK SL SM SN SO SR ST SV SY SZ TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VE VI VN VU WF WS YE YT ZA ZM ZW ZZ"
+      },
+      "name": "Laura",
+      "popularity": "0.65265"
+    },
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:1hILUorUw6EwZTdbkQvgsA",
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GM GN GP GQ GR GS GT GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH ML MN MO MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UY UZ VC VE VG VN VU WF WS YE YT ZA ZM ZW ZZ"
+      },
+      "name": "All Your Gold",
+      "popularity": "0.64273"
+    },
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:5oGnsIdK6MNnm2OEHnOG4Z",
+      "availability": {
+        "territories": "AU CC CK CX HM NF NU NZ TK"
+      },
+      "name": "The Haunted Man",
+      "popularity": "0.62006"
+    },
+    {
+      "name": "Sleep Alone\/Moon and Moon",
+      "popularity": "0.52787",
+      "external-ids": [
+        {
+          "type": "upc",
+          "id": "5099968537753"
+        }
+      ],
+      "href": "spotify:album:7HQyTTh2pkMgOOZ9jku88A",
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AS AT AU AW AZ BA BB BD BE BF BG BH BI BJ BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GH GI GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IN IO IQ IR IS IT JM JO KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD MG MH ML MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PT PW PY QA RE RO RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ZZ"
+      }
+    },
+    {
+      "name": "Pearl's Dream",
+      "popularity": "0.51078",
+      "external-ids": [
+        {
+          "type": "upc",
+          "id": "5099969923555"
+        }
+      ],
+      "href": "spotify:album:0lhFjK0QSbGFCiWps0Ohyo",
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AS AU AW AZ BA BB BD BF BG BH BI BJ BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CI CK CL CM CN CO CR CU CV CX CY CZ DJ DM DO DZ EC EE EG EH ER ES ET FJ FK FM FO FR GA GB GD GE GF GH GI GM GN GP GQ GS GT GU GW GY HK HM HN HR HT HU ID IE IL IN IO IQ IR IS IT JM JO JP KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LV LY MA MC MD MG MH ML MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PW PY QA RE RO RU RW SA SB SC SD SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ZZ"
+      }
+    },
+    {
+      "name": "What's a Girl To Do",
+      "popularity": "0.48812",
+      "external-ids": [
+        {
+          "type": "upc",
+          "id": "5099969780950"
+        }
+      ],
+      "href": "spotify:album:4Alk0yt5jzqvfdBb4iF6lG",
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AS AT AU AW AZ BA BB BD BE BF BG BH BI BJ BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GH GI GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IN IO IQ IR IS IT JM JO JP KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD MG MH ML MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PT PW PY QA RE RO RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ZZ"
+      }
+    },
+    {
+      "name": "Live Session - EP",
+      "popularity": "0.46772",
+      "external-ids": [
+        {
+          "type": "upc",
+          "id": "5099952245053"
+        }
+      ],
+      "href": "spotify:album:3g0wAEyM0v29mVVRSNPU3D",
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AS AT AU AW AZ BA BB BD BE BF BG BH BI BJ BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GH GI GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IN IO IQ IR IS IT JM JO JP KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD MG MH ML MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PT PW PY QA RE RO RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ZZ"
+      }
+    },
+    {
+      "name": "A Forest - Single",
+      "popularity": "0.44874",
+      "external-ids": [
+        {
+          "type": "upc",
+          "id": "887396430433"
+        }
+      ],
+      "href": "spotify:album:7LOVpFRBpYPNC6ApLrVt1z",
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "availability": {
+        "territories": "AD AE AF AG AI AL AM AN AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BM BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ZZ"
+      }
+    },
+    {
+      "name": "Pearl's Dream",
+      "popularity": "0.43201",
+      "external-ids": [
+        {
+          "type": "upc",
+          "id": "5099996858356"
+        }
+      ],
+      "href": "spotify:album:34dRSKNjO919cdT55MbcjJ",
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "availability": {
+        "territories": "AT BE CH DE DK FI GR IE LU NO PT SE"
+      }
+    },
+    {
+      "name": "Daniel (Remixes)",
+      "popularity": "0.40224",
+      "external-ids": [
+        {
+          "type": "upc",
+          "id": "5099996552957"
+        }
+      ],
+      "href": "spotify:album:4Bs71OoPg9JWY4y23OUl4N",
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "availability": {
+        "territories": "CA US"
+      }
+    },
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:00CCqafvzZq73zeFCOaag3",
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AS AT AU AW AZ BA BB BD BE BF BG BH BI BJ BL BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GH GI GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IN IO IQ IR IS IT JM JO JP KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH ML MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UY UZ VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ZZ"
+      },
+      "name": "Daniel",
+      "popularity": "0.38392"
+    },
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:4a7CExh4jNpVzsa4IvCErE",
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AS AT AU AW AZ BA BB BD BE BF BG BH BI BJ BL BN BO BR BS BT BV BW BY BZ CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GH GI GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IN IO IQ IR IS IT JM JO JP KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH ML MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PN PR PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UY UZ VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ZZ"
+      },
+      "name": "Daniel",
+      "popularity": "0.37462"
+    },
+    {
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "href": "spotify:album:4MNPgA7l0I2qkG2u2APPfy",
+      "availability": {
+        "territories": "AD AE AG AI AL AM AN AO AQ AR AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BN BO BR BS BT BV BW BY BZ CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GM GN GP GQ GR GS GT GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH ML MN MO MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PN PR PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UY UZ VC VE VG VN VU WF WS YE YT ZA ZM ZW ZZ"
+      },
+      "name": "Let's Get Lost",
+      "popularity": "0.28578"
+    }
+  ]
+}

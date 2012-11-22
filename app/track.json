@@ -1,0 +1,94 @@
+//Response from http://ws.spotify.com/search/1/track.json?q=artist%3ABat+for+Lashes+track%3AHorses+of+the+Sun
+{
+  "info": {
+    "num_results": 3,
+    "limit": 100,
+    "offset": 0,
+    "query": "artist:Bat for Lashes track:Horses of the Sun",
+    "type": "track",
+    "page": 1
+  },
+  "tracks": [
+    {
+      "album": {
+        "released": "2012",
+        "href": "spotify:album:6rg92rv1hTB5fDfm85cWgq",
+        "name": "The Haunted Man",
+        "availability": {
+          "territories": "AD AE AG AI AL AM AN AO AQ AR AT AW AX AZ BA BB BD BE BF BG BH BI BJ BL BN BO BR BS BT BV BW BY BZ CD CF CG CH CI CL CM CN CO CR CU CV CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GM GN GP GQ GR GS GT GW GY HK HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO KE KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH ML MN MO MQ MR MS MT MU MV MW MX MY MZ NA NC NE NG NI NL NO NP NR OM PA PE PF PG PH PK PL PN PR PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TL TM TN TO TR TT TV TW TZ UA UG UY UZ VC VE VG VN VU WF WS YE YT ZA ZM ZW ZZ"
+        }
+      },
+      "name": "Horses of the Sun",
+      "popularity": "0.63480",
+      "external-ids": [
+        {
+          "type": "isrc",
+          "id": "GB5KW1200149"
+        }
+      ],
+      "length": 300.117,
+      "href": "spotify:track:49STD5wsN2v8DXoxl5jurp",
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "track-number": "3"
+    },
+    {
+      "album": {
+        "released": "2012",
+        "href": "spotify:album:2pVFhlSkTgwzENzK1j21l1",
+        "name": "The Haunted Man",
+        "availability": {
+          "territories": "AS CA GU MP PR UM US VI"
+        }
+      },
+      "name": "Horses of the Sun",
+      "popularity": "0.60265",
+      "external-ids": [
+        {
+          "type": "isrc",
+          "id": "GB5KW1200149"
+        }
+      ],
+      "length": 300.117,
+      "href": "spotify:track:2Fx4D2TIwy9bVi8ZFOK7M5",
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "track-number": "3"
+    },
+    {
+      "album": {
+        "released": "2012",
+        "href": "spotify:album:5oGnsIdK6MNnm2OEHnOG4Z",
+        "name": "The Haunted Man",
+        "availability": {
+          "territories": "AU CC CK CX HM NF NU NZ TK"
+        }
+      },
+      "name": "Horses of the Sun",
+      "popularity": "0.45985",
+      "external-ids": [
+        {
+          "type": "isrc",
+          "id": "GB5KW1200149"
+        }
+      ],
+      "length": 300.117,
+      "href": "spotify:track:5tQgik2lcBZgJPRg6QAOqd",
+      "artists": [
+        {
+          "href": "spotify:artist:6l77PmL5iuEEcYjGl8K6s7",
+          "name": "Bat For Lashes"
+        }
+      ],
+      "track-number": "3"
+    }
+  ]
+}

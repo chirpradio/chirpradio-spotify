@@ -1,0 +1,42 @@
+<!-- kumar's discussion: https://groups.google.com/forum/#!msg/chirpdev/MNPPRONHCd0/ZnONh-7H_nIJ -->
+<!-- to run locally, enter this in Spotify search bar: spotify:app:$BUNDLE-IDENTIFIER -->
+<!-- spotify docs: https://developer.spotify.com/technologies/apps/guidelines/integration/ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CHIRP Radio</title>
+
+	<!--link rel="stylesheet" href="sp://import/css/adam.css"-->
+	<!--link rel="stylesheet" href="tutorial.css"-->
+    <!--link rel="stylesheet" href="libs/css/styles.css"-->	
+    <style>
+	    @import url('sp://import/css/api.css');    
+	    @import url('sp://import/css/eve.css');    
+	    @import url('sp://import/css/player.css');    
+	    @import url('sp://import/css/ui.css');    
+	    @import url('sp://import/css/list.css');    
+	</style>
+</head>
+<body>
+	<h1 id="header">Hello, world! I'm in /Users/CPatel/Spotify/tutorial</h1>
+	<div id="container"></div>
+	<script src="libs/js/jquery.js"></script>
+	<script src="libs/js/jquery-ui.min.js"></script>
+
+	<script src="libs/js/underscore.js"></script>
+	<script src="libs/js/transform.js"></script>
+
+	<script>
+	    
+	    var ChirpRadio = ChirpRadio || {};
+	
+		$(function() {
+			sp  = getSpotifyApi(1);
+			var a   = sp.require("app/app");
+			ChirpRadio.app = a.App();
+			ChirpRadio.app.init();
+		});
+	</script>
+</body>
+</html>

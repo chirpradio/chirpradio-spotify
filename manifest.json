@@ -1,0 +1,14 @@
+{
+	"BundleType": "Application",
+	"BundleIdentifier": "chirp",
+	"AppIcon": {
+		"36x18": "tutorial.png"
+	},
+	"AppName": {
+		"en": "CHIRP Radio"
+	},
+	"SupportedLanguages": [
+		"en"
+	],
+    "RequiredPermissions": ["http://*.spotify.com"] 
+}
