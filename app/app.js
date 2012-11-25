@@ -1,6 +1,5 @@
 //forked from https://github.com/alexmic/mood-knobs
 var spm = sp.require("app/spotify-metadata"),
-    enm = sp.require("app/echonest-metadata"),
     m   = sp.require('sp://import/scripts/api/models'),
     ui  = sp.require("sp://import/scripts/ui");
  views  = sp.require("sp://import/scripts/api/views");
@@ -55,7 +54,7 @@ var Album = function(data)
                 }
             })(album));
 
-            //player.track = null;
+            player.track = null;
             player.context = album;
             //$(elem).append(player.node);
 
