@@ -5,5 +5,5 @@
 
 **To install locally**
 
-1. put this code in /Users/<username>/Spotify/chirpradio
+1. put this code in /Users/username/Spotify/chirpradio
 1. enter this in Spotify search bar: spotify:app:chirp
