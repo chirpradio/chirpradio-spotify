@@ -55,14 +55,15 @@ var Album = function(data)
             })(album));
 
             player.track = null;
-            player.context = album;
-            //$(elem).append(player.node);
+            setTimeout(function() { player.context = album;}, 500);
+            //player.context = album;
 
             //var image = new views.Image("mySource", album.data.cover, album.name);
             //$(player.node).find('.sp-player-image').replaceWith(image.node);
 
-            $('#container').append(player.node);
+            $(elem).prepend(player.node);
             $('#container').append(elem)
+
         } else {
             console.log('No albums found.');
         }
