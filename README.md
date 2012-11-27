@@ -7,3 +7,8 @@
 
 1. put this code in `/Users/username/Spotify/chirpradio`
 1. enter this in Spotify search bar: `spotify:app:chirp`
+
+**To debug or use HTML/CSS inspector**
+
+1. Register for a [devloper's account](https://developer.spotify.com/technologies/apps/#developer-account)
+1. In the Spotify app, click `Developer > Show Inspector` (it's the same inspector as Chrome's)
