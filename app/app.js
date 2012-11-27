@@ -61,6 +61,7 @@ var Album = function(data)
             //var image = new views.Image("mySource", album.data.cover, album.name);
             //$(player.node).find('.sp-player-image').replaceWith(image.node);
 
+            //$('#container').append(player.node);
             $(elem).prepend(player.node);
             $('#container').append(elem)
 
