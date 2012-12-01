@@ -99,7 +99,7 @@ var Album = function(data)
 
 var App = function()
 {
-    var onTopAlbumLookupReturn = function(err, albums) {
+    var onTopAlbumsLookupReturn = function(err, albums) {
         albums.top_albums.forEach(function (top_album) {
             data=new Object();
             data.title = top_album.release
@@ -113,7 +113,7 @@ var App = function()
     return {
         init: function()
         {
-            spm.getTopAlbums(onTopAlbumLookupReturn);
+            spm.getTopAlbums(onTopAlbumsLookupReturn);
             return this;
         }        
     };

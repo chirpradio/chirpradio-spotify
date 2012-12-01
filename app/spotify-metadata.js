@@ -23,7 +23,7 @@ exports.searchForTrack = function (artist, track, callback) {
       .error(function (err) { if (callback) callback(err) });
 }
 
-
+//hardcoing a jason string for the top albums for now
 exports.getTopAlbums  = function (callback) {
   var jsonString = '{"top_albums":[{"artist":"Chandeliers","label":"Pickled Egg","release":"Dirty Moves","play_count":"15","lastfm_urls":{"med_image":"http://userserve-ak.last.fm/serve/64s/68918564.jpg","sm_image":"http://userserve-ak.last.fm/serve/34s/68918564.jpg","_processed":true,"large_image":"http://userserve-ak.last.fm/serve/174s/68918564.jpg"}},{"artist":"The Promise Ring","label":"ANTI-","release":"Wood/Water","play_count":"10","lastfm_urls":{"med_image":"http://userserve-ak.last.fm/serve/64s/8670313.jpg","sm_image":"http://userserve-ak.last.fm/serve/34s/8670313.jpg","_processed":true,"large_image":"http://userserve-ak.last.fm/serve/174s/8670313.jpg"}},{"artist":"Beck","label":"DGC","release":"Midnite Vultures","play_count":"5","lastfm_urls":{"med_image":"http://userserve-ak.last.fm/serve/64s/84092723.png","sm_image":"http://userserve-ak.last.fm/serve/34s/84092723.png","_processed":true,"large_image":"http://userserve-ak.last.fm/serve/174s/84092723.png"}}]}';
   jsonObject = jQuery.parseJSON( jsonString );
@@ -57,6 +57,8 @@ exports.searchForAlbum = function (artist, album, callback) {
       if (callback) callback(err);
     },   
   });
+
+  // this is async way to fetch the album info:
   // $.getJSON('http://ws.spotify.com/search/1/album.json?' + q)
   //     .success(function (data) {
   //       var albums = [];
@@ -73,4 +75,5 @@ exports.searchForAlbum = function (artist, album, callback) {
   //       if (callback) callback(null, albums);
   //     })
   //     .error(function (err) { if (callback) callback(err) });
+
 }
