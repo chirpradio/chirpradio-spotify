@@ -114,12 +114,6 @@ var App = function()
         init: function()
         {
             spm.getTopAlbums(onTopAlbumLookupReturn);
-            data=new Object();
-            data.title = "American Beauty";
-            data.artist_name="Grateful Dead";
-            data.artist_id=0;
-            album = new Album(data);
-            album.draw(0);
             return this;
         }        
     };
