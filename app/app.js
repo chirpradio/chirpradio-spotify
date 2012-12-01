@@ -24,7 +24,7 @@ var Album = function(data)
                         "<button id='savePlaylist' class='add-playlist sp-button sp-icon' <span class='sp-plus'></span>Add as Playlist</button>" +
                       "</div>");
                     
-    var onSearchReturn = function(err, albums) {
+    var onSearchReturn = function(err, albums, artist, album_name) {
         if (err) {
             throw "error hitting the Spotify search API";
         }
@@ -66,7 +66,7 @@ var Album = function(data)
             $('#container').append(elem)
 
         } else {
-            console.log('No albums found.');
+            console.log('The album "' + artist + ' - ' + album_name + '"was not found by Spotify album search API.');
         }
     }
     
@@ -99,9 +99,21 @@ var Album = function(data)
 
 var App = function()
 {
+    var onTopAlbumLookupReturn = function(err, albums) {
+        albums.top_albums.forEach(function (top_album) {
+            data=new Object();
+            data.title = top_album.release
+            data.artist_name = top_album.artist
+            data.artist_id=0;
+            album = new Album(data);
+            album.draw(0);
+        });
+    }
+
     return {
         init: function()
         {
+            spm.getTopAlbums(onTopAlbumLookupReturn);
             data=new Object();
             data.title = "American Beauty";
             data.artist_name="Grateful Dead";
