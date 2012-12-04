@@ -7,7 +7,7 @@
 **To install locally**
 
 1. put this code in `/Users/username/Spotify/chirpradio`
-1. enter this in Spotify search bar: `spotify:app:chirp`
+1. In the Spotify desktop app, enter this in search bar: `spotify:app:chirp`
 
 **To debug or use HTML/CSS inspector**
 
