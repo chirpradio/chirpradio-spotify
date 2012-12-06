@@ -2,6 +2,7 @@
 var _ = sp.require('libs/js/underscore')._;
 var m = sp.require('sp://import/scripts/api/models');
 
+//search for track by artist name and track name and trigger callback afterwards
 exports.searchForTrack = function (artist, track, callback) {
   var q = $.param({q: ['artist:' + artist, 'track:' + track].join(' ')});
   //http://ws.spotify.com/search/1/track.json?q=artist%3ABat+for+Lashes+track%3AHorses+of+the+Sun
@@ -23,6 +24,7 @@ exports.searchForTrack = function (artist, track, callback) {
       .error(function (err) { if (callback) callback(err) });
 }
 
+//returns top albums (tagged with 'heavy rotation')
 //hardcoing a jason string for the top albums for now
 exports.getTopAlbums  = function (callback) {
   var jsonString = '{"top_albums":[{"artist":"Chandeliers","label":"Pickled Egg","release":"Dirty Moves","play_count":"15","lastfm_urls":{"med_image":"http://userserve-ak.last.fm/serve/64s/68918564.jpg","sm_image":"http://userserve-ak.last.fm/serve/34s/68918564.jpg","_processed":true,"large_image":"http://userserve-ak.last.fm/serve/174s/68918564.jpg"}},{"artist":"The Promise Ring","label":"ANTI-","release":"Wood/Water","play_count":"10","lastfm_urls":{"med_image":"http://userserve-ak.last.fm/serve/64s/8670313.jpg","sm_image":"http://userserve-ak.last.fm/serve/34s/8670313.jpg","_processed":true,"large_image":"http://userserve-ak.last.fm/serve/174s/8670313.jpg"}},{"artist":"Beck","label":"DGC","release":"Midnite Vultures","play_count":"5","lastfm_urls":{"med_image":"http://userserve-ak.last.fm/serve/64s/84092723.png","sm_image":"http://userserve-ak.last.fm/serve/34s/84092723.png","_processed":true,"large_image":"http://userserve-ak.last.fm/serve/174s/84092723.png"}}]}';
@@ -31,6 +33,7 @@ exports.getTopAlbums  = function (callback) {
   if (callback) callback(null, jsonObject);
 }
 
+//search for album by artist name and album name and trigger callback afterwards
 exports.searchForAlbum = function (artist, album, callback) {
   var q = $.param({q: ['artist:' + artist, 'album:' + album].join(' ')});
   //Format: http://ws.spotify.com/search/1/album.json?q=artist%3ABat+for+Lashes+album%3AThe+Haunted+Man
@@ -75,5 +78,4 @@ exports.searchForAlbum = function (artist, album, callback) {
   //       if (callback) callback(null, albums);
   //     })
   //     .error(function (err) { if (callback) callback(err) });
-
 }

@@ -24,6 +24,7 @@ var Album = function(data)
                         "<button id='savePlaylist' class='add-playlist sp-button sp-icon' <span class='sp-plus'></span>Add as Playlist</button>" +
                       "</div>");
                     
+    //callback when Spotify search API is called
     var onSearchReturn = function(err, albums, artist, album_name) {
         if (err) {
             throw "error hitting the Spotify search API";
@@ -55,13 +56,14 @@ var Album = function(data)
             })(album));
 
             player.track = null;
-            setTimeout(function() { player.context = album;}, 500);
-            //player.context = album;
 
+            //adding artifical delay for an unexplainable bug (album cover not showing)
+            setTimeout(function() { player.context = album;}, 500);
+
+            //custom album cover image
             //var image = new views.Image("mySource", album.data.cover, album.name);
             //$(player.node).find('.sp-player-image').replaceWith(image.node);
 
-            //$('#container').append(player.node);
             $(elem).prepend(player.node);
             $('#container').append(elem)
 
@@ -99,6 +101,7 @@ var Album = function(data)
 
 var App = function()
 {
+    //callback function when top albums are looked up
     var onTopAlbumsLookupReturn = function(err, albums) {
         albums.top_albums.forEach(function (top_album) {
             data=new Object();
