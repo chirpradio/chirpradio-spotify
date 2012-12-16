@@ -25,12 +25,28 @@ exports.searchForTrack = function (artist, track, callback) {
 }
 
 //returns top albums (tagged with 'heavy rotation')
-//hardcoing a jason string for the top albums for now
-exports.getTopAlbums  = function (callback) {
+//hardcoded to a jason string for the top albums
+exports.getTopAlbumsFile  = function (callback) {
   var jsonString = '{"top_albums":[{"artist":"Chandeliers","label":"Pickled Egg","release":"Dirty Moves","play_count":"15","lastfm_urls":{"med_image":"http://userserve-ak.last.fm/serve/64s/68918564.jpg","sm_image":"http://userserve-ak.last.fm/serve/34s/68918564.jpg","_processed":true,"large_image":"http://userserve-ak.last.fm/serve/174s/68918564.jpg"}},{"artist":"The Promise Ring","label":"ANTI-","release":"Wood/Water","play_count":"10","lastfm_urls":{"med_image":"http://userserve-ak.last.fm/serve/64s/8670313.jpg","sm_image":"http://userserve-ak.last.fm/serve/34s/8670313.jpg","_processed":true,"large_image":"http://userserve-ak.last.fm/serve/174s/8670313.jpg"}},{"artist":"Beck","label":"DGC","release":"Midnite Vultures","play_count":"5","lastfm_urls":{"med_image":"http://userserve-ak.last.fm/serve/64s/84092723.png","sm_image":"http://userserve-ak.last.fm/serve/34s/84092723.png","_processed":true,"large_image":"http://userserve-ak.last.fm/serve/174s/84092723.png"}}]}';
   jsonObject = jQuery.parseJSON( jsonString );
 
   if (callback) callback(null, jsonObject);
+}
+
+//returns top albums (tagged with 'heavy rotation')
+exports.getTopAlbums  = function (callback) {
+  $.ajax({
+    async: true,
+    url: 'https://chirpradio.appspot.com/api/stats',
+    dataType: "json",
+    success: function(data) {
+      jsonObject = jQuery.parseJSON( data );
+      if (callback) callback(null, jsonObject);
+    },
+    error: function(data) {
+      if (callback) callback(err);
+    },
+  });
 }
 
 //search for album by artist name and album name and trigger callback afterwards
@@ -56,9 +72,9 @@ exports.searchForAlbum = function (artist, album, callback) {
 
       if (callback) callback(null, albums, artist, album);
     },
-     error: function(data) {
+    error: function(data) {
       if (callback) callback(err);
-    },   
+    },
   });
 
   // this is async way to fetch the album info:

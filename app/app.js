@@ -102,8 +102,19 @@ var Album = function(data)
 var App = function()
 {
     //callback function when top albums are looked up
-    var onTopAlbumsLookupReturn = function(err, albums) {
+    var onTopAlbumsLookupReturnFile = function(err, albums) {
         albums.top_albums.forEach(function (top_album) {
+            data=new Object();
+            data.title = top_album.release
+            data.artist_name = top_album.artist
+            data.artist_id=0;
+            album = new Album(data);
+            album.draw(0);
+        });
+    }
+
+    var onTopAlbumsLookupReturn = function(err, albums) {
+        albums.this_week.releases.forEach(function (top_album) {
             data=new Object();
             data.title = top_album.release
             data.artist_name = top_album.artist
@@ -122,6 +133,20 @@ var App = function()
     };
 
 };
+
+//try this approach if the jquery way doesn't work
+function loadDatos() {   
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'datos.json', true);
+    xobj.onReadyStateChange = function () {
+        if (xobj.readyState == 4) {
+            var jsonTexto = xobj.responseText;
+            ProcessTheData(jsonTexto);
+        }
+    }
+    xobj.send(null);
+}
 
 exports.App  = App;
 exports.Album = Album;

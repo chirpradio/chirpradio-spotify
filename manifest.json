@@ -10,5 +10,5 @@
 	"SupportedLanguages": [
 		"en"
 	],
-    "RequiredPermissions": ["http://*.spotify.com"] 
+    "RequiredPermissions": ["http://*.spotify.com", "https://chirpradio.appspot.com"] 
 }
