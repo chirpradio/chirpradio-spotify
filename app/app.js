@@ -127,26 +127,12 @@ var App = function()
     return {
         init: function()
         {
-            spm.getTopAlbums(onTopAlbumsLookupReturn);
+            spm.getTopAlbumsNoJQuery(onTopAlbumsLookupReturn);
             return this;
         }        
     };
 
 };
-
-//try this approach if the jquery way doesn't work
-function loadDatos() {   
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'datos.json', true);
-    xobj.onReadyStateChange = function () {
-        if (xobj.readyState == 4) {
-            var jsonTexto = xobj.responseText;
-            ProcessTheData(jsonTexto);
-        }
-    }
-    xobj.send(null);
-}
 
 exports.App  = App;
 exports.Album = Album;

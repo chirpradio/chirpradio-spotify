@@ -34,7 +34,7 @@ exports.getTopAlbumsFile  = function (callback) {
 }
 
 //returns top albums (tagged with 'heavy rotation')
-exports.getTopAlbums  = function (callback) {
+exports.getTopAlbums = function (callback) {
   $.ajax({
     async: true,
     url: 'https://chirpradio.appspot.com/api/stats',
@@ -44,9 +44,24 @@ exports.getTopAlbums  = function (callback) {
       if (callback) callback(null, jsonObject);
     },
     error: function(data) {
-      if (callback) callback(err);
+      if (callback) callback(data);
     },
   });
+}
+
+
+//try this approach if the jquery way doesn't work
+exports.getTopAlbumsNoJQuery = function (callback) {   
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'https://chirpradio.appspot.com/api/stats', true);
+    xobj.onReadyStateChange = function () {
+        if (xobj.readyState == 4) {
+            var jsonTexto = xobj.responseText;
+            jsonObject = jQuery.parseJSON( jsonTexto );
+        }
+    }
+    xobj.send(null);
 }
 
 //search for album by artist name and album name and trigger callback afterwards
