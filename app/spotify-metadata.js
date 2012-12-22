@@ -40,28 +40,13 @@ exports.getTopAlbums = function (callback) {
     url: 'https://chirpradio.appspot.com/api/stats',
     dataType: "json",
     success: function(data) {
-      jsonObject = jQuery.parseJSON( data );
-      if (callback) callback(null, jsonObject);
+      //jsonObject = jQuery.parseJSON( data );
+      if (callback) callback(null, data);
     },
     error: function(data) {
       if (callback) callback(data);
     },
   });
-}
-
-
-//try this approach if the jquery way doesn't work
-exports.getTopAlbumsNoJQuery = function (callback) {   
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'https://chirpradio.appspot.com/api/stats', true);
-    xobj.onReadyStateChange = function () {
-        if (xobj.readyState == 4) {
-            var jsonTexto = xobj.responseText;
-            jsonObject = jQuery.parseJSON( jsonTexto );
-        }
-    }
-    xobj.send(null);
 }
 
 //search for album by artist name and album name and trigger callback afterwards

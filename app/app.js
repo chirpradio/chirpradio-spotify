@@ -13,7 +13,16 @@ var Album = function(data)
         album    = null,
         id       = null,
         pl       = null,
-        elem     = $("<div style='display:block'>" +
+        elem     = $("<article class='track'>" +
+                   "<p>" +
+                        "<strong class='artist'>" + artist + "</strong>" +
+                        //"<span class='song'>" + title + "</span> from" + 
+                        "<em class='album'>" + title + "</em>" +
+                        //<span class="label">(Island)</span> 
+                    "</p>" +
+                    "<button id='savePlaylist' class='add-playlist sp-button sp-icon' <span class='sp-plus'></span>Add as Playlist</button>" +
+                    "</article>");
+        elemDiv  = $("<div style='display:block'>" +
                       "<div class='dets'>" + 
                         "<div class='artist'>" +
                             artist +
@@ -21,7 +30,6 @@ var Album = function(data)
                         "<div class='title'>" +
                             title +
                         "</div>" +
-                        "<button id='savePlaylist' class='add-playlist sp-button sp-icon' <span class='sp-plus'></span>Add as Playlist</button>" +
                       "</div>");
                     
     //callback when Spotify search API is called
@@ -58,7 +66,7 @@ var Album = function(data)
             player.track = null;
 
             //adding artifical delay for an unexplainable bug (album cover not showing)
-            setTimeout(function() { player.context = album;}, 500);
+            setTimeout(function() { player.context = album;}, 100);
 
             //custom album cover image
             //var image = new views.Image("mySource", album.data.cover, album.name);
@@ -68,7 +76,7 @@ var Album = function(data)
             $('#container').append(elem)
 
         } else {
-            console.log('The album "' + artist + ' - ' + album_name + '"was not found by Spotify album search API.');
+            console.log('The album "' + artist + ' - ' + album_name + '" was not found by Spotify album search API.');
         }
     }
     
@@ -127,7 +135,8 @@ var App = function()
     return {
         init: function()
         {
-            spm.getTopAlbumsNoJQuery(onTopAlbumsLookupReturn);
+            //spm.getTopAlbumsNoJQuery(onTopAlbumsLookupReturn);
+            spm.getTopAlbums(onTopAlbumsLookupReturn);
             return this;
         }        
     };
