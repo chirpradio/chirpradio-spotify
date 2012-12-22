@@ -16,9 +16,9 @@
 
 .tracks .more:hover { background: rgba(255, 255, 255, 0.9); }
 
-.track { overflow: hidden; padding: 10px 10px; border-top: 1px solid #3f3437; height:220px; background-color: #fff; margin: 10px; position:relative; }
+.track { overflow: hidden; padding: 10px 10px; border-top: 1px solid #3f3437; height:220px; background-color: #fff; margin: 10px; display: inline; float: left; position:relative; }
 @media (min-width: 768px) { 
-  .track { display: inline; float: left; width: 130px; border-top: none; padding-top: 10px; } }
+  .track { width: 130px; border-top: none; padding-top: 10px; } }
 @media (min-width: 1000px) { 
   .track { width: 140px; padding: 10px 15px; } }
 @media (min-width: 1350px) { 
