@@ -20,7 +20,7 @@ var Album = function(data)
                         "<em class='album'>" + title + "</em>" +
                         //<span class="label">(Island)</span> 
                     "</p>" +
-                    "<button id='savePlaylist' class='add-playlist sp-button sp-icon' <span class='sp-plus'></span>Add as Playlist</button>" +
+                    "<button id='savePlaylist' class='add-playlist sp-button sp-icon'> <span class='sp-plus'></span>Add as Playlist</button>" +
                     "</article>");
         elemDiv  = $("<div style='display:block'>" +
                       "<div class='dets'>" + 
