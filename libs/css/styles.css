@@ -1,350 +1,42 @@
-/*----------------------------
-	App Styles
------------------------------*/
+/* 3d Transform Defaults */
+/* Transition Defaults */
+/* Color Contrast Defaults */
+/* Fonts */
+/* Colors */
+/* Color Usage */
+/* These are some common custom mixins go here */
 
-.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-.clearfix { display: inline-block; }
-* html .clearfix { height: 1%; } /* Hides from IE-mac \*/
-.clearfix { display: block; }
+.tracks { margin-top: 20px; clear: both; overflow: hidden; }
+@media (min-width: 768px) { 
+  .tracks { margin-top: 0; } }
+@media (min-width: 1000px) { 
+  .tracks { margin-top: 20px; } }
 
-head, body {
-	height: 100%;
-	width: 100%;
-	background-image: url("../../res/imgs/black_denim.png");
-	font-size: 13px;
-}
+.tracks .more { -webkit-border-radius: 6px; -moz-border-radius: 6px; -ms-border-radius: 6px; -o-border-radius: 6px; border-radius: 6px; -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4); -moz-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4); box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4); background: white; background: rgba(255, 255, 255, 0.5); padding: 10px; clear: both; text-align: center; margin-bottom: 15px; }
 
-#title {
-	height: 49px;
-	line-height: 50px;
-	text-align: center;
-	color: white;
-	border-bottom: 2px solid black;
-	font-size: 1.153em;
-	z-index: 20;
-	text-shadow: 0px 1px 0px black;
-	background-image: url("../../res/imgs/dark_leather.png");
-}
+.tracks .more:hover { background: rgba(255, 255, 255, 0.9); }
 
-#main {
-	border-top: 1px solid #191919;
-}
+.track { overflow: hidden; padding: 10px 10px; border-top: 1px solid #3f3437; height:220px; background-color: #fff; margin: 10px; position:relative; }
+@media (min-width: 768px) { 
+  .track { display: inline; float: left; width: 130px; border-top: none; padding-top: 10px; } }
+@media (min-width: 1000px) { 
+  .track { width: 140px; padding: 10px 15px; } }
+@media (min-width: 1350px) { 
+  .track { width: 210px; } }
 
-.synthi-knob {
-	margin: 0 auto;
-	position: relative;
-	float:left;
-	text-align: center;
-}
+.track p { font-size: 1.4em; line-height: 1.2; overflow: hidden; margin-top: 7px; margin-bottom: 7px;}
+@media (min-width: 480px) { 
+  .track p { font-size: 1.5em; line-height: 1.3; } }
+@media (min-width: 768px) { 
+  .track p { font-size: 1.1em; } }
+@media (min-width: 1000px) { 
+  .track p { font-size: 1.4em; } }
 
-.text {
-	font-size: 0.846em;
-	color: white;
-	text-shadow: 0px 1px 0px black;
-	padding: 3px;
-	width: 60px;
-	box-shadow: 0px 1px 4px black;
-	background-color: #222;
-	border-radius: 3px;
-	bottom: 10px;
-	left: 25%;
-	position: absolute;
-}
+.track p { font-size: 1.1em; line-height: 1.2; overflow: hidden; margin-top: 7px; margin-bottom: 7px;}
 
-.column {
-	float: left;
-	position: relative;
-}
+.track button { position:absolute; bottom:0; margin-bottom:15px;}
 
-.song {
-	box-shadow: 0px 1px 4px black;
-	background-color: #222;
-	border-bottom: 1px solid black;
-	border-top: 1px solid #292929;
-	text-shadow: 0px 1px 0px #292929;
-	font-size: 0.846em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	z-index: 500;
-	padding: 5px;
-	position: relative;
-	width: 96%;
-}
+.artist { font-family: "proxima-nova-1", "proxima-nova-2", "Arial", Helmet, Freesans, sans-serif; font-weight: 600; color: #822036; font-size: 1.1em; display:block;}
 
-.song:hover, .s:hover {
-	cursor: pointer;
-	background-color: #242424;
-}
+.track .album { color: #3f3437; padding-bottom: 10px;}
 
-.song:hover .dets span, .s:hover span {
-	visibility: visible;
-}
-	.song .img {
-		height: 32px;
-		width: 32px;
-		border: 1px solid black;
-		float: left;
-		margin-right: 6px;
-		background-size: 32px 32px;
-	}
-	
-	.song .dets {
-		float: left;
-	}
-	.song .artist {
-		font-weight: bold;
-		color: white;
-	}
-	
-	.song .dets span, .s span {
-		position: absolute;
-		right: 8px;
-		visibility: hidden;
-		bottom: 3px;
-	}
-	
-		.s span {
-	 		bottom: 2px;
-	 		right: 12px;
-	 	}
-	
-#playlist {	border-top: 1px solid #292929;
-
-	box-shadow: 0px 1px 4px black;
-	background-color: #222;
-}
-
-#playlist #name {
-	margin: 0px;
-	padding: 0px;
-	height: 43px;
-	line-height: 43px;
-	border-bottom: 1px solid black;
-	text-align: center;
-}
-
-#playlist #songs {
-	border-top: 1px solid #292929;
-	min-height: 400px;
-}
-
-	#playlist #name div {
-		width: 100%;
-		font-weight: bold;
-		font-size: 0.846em;
-		height: 45px;
-		overflow: hidden;
-		text-overflow-mode: ellipsis;
-		color: white;
-	}
-	
-	#playlist #name button {
-		height: 25px;
-		top: 10px;
-		border: 1px solid black;
-	}
-
-	
-	#playlist #save input:focus {
-		background-color: white;
-	}
-	
-	.s {
-		font-size: 0.823em;
-		position: relative;
-		padding-top: 4px;
-		padding-bottom: 4px;
-		padding-left: 3px;
-		border-top: 1px solid #292929;
-		border-bottom: 1px solid black;
-	}	
-
-
-/* Player */
-
-/**
- * Player styles
- */
-.sp-player {
-    background: #474747 url("sp://import/img/placeholders/60-album.png") 50% 50% no-repeat;
-    background-size: 120px 120px;
-    display: inline-block;
-    height: 128px;
-    position: relative;
-    z-index: 10;
-}
-.sp-player .sp-image {
-    cursor: default;
-    display: inline-block;
-    position: relative;
-    height: 128px;
-    width: 128px;
-}
-.sp-player .sp-image::before {
-    background-image: url("sp://import/img/play-big.png");
-    background-clip: content-box;
-    background-position-x: -180px;
-    content: "";
-    display: block;
-    height: 59px;
-    left: 50%;
-    margin: -29px 0 0 -29px;
-    position: absolute;
-    top: 50%;
-    width: 59px;
-}
-.sp-player .sp-image:hover::before  { background-position-x: -240px; }
-.sp-player .sp-image:active::before { background-position-x: -300px; }
-.sp-player.paused .sp-image::before { background-position-x: 0; }
-.sp-player.paused .sp-image:hover::before  { background-position-x: -60px; }
-.sp-player.paused .sp-image:active::before { background-position-x: -120px; }
-
-.sp-player .sp-image {
-    height: 128px;
-    width: 128px;
-}
-
-/*----------------------------
-	knobKnob Styles
------------------------------*/
-
-
-.knob{
-	width:100%;
-	height:100%;
-	position:relative;
-}
-
-.knob .top{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background:url('../../res/imgs/knob.png') no-repeat;
-	background-size: 100%;
-	z-index:10;
-	cursor:default !important;
-}
-
-.knob .base{
-	width:100%;
-	height:100%;
-	border-radius:50%;
-	box-shadow:0 5px 0 #4a5056,5px 5px 5px #000;
-	position:absolute;
-	top:0;
-	left:0;
-	z-index:1;
-}
-
-.knob .top:after{
-	content:'';
-	width:10%;
-	height:10%;
-	background-color:#666;
-	position:absolute;
-	top:50%;
-	left:10px;
-	margin-top:-5px;
-	border-radius: 50%;
-	cursor:default !important;
-	box-shadow: 0 0 1px #5a5a5a inset;
-}
-
-.knob [draggable] {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-/*----------------------------
-	Color Bars
------------------------------*/
-
-
-.bars{
-	height: 100%;
-	width: 100%;
-	text-align: center;
-}
-
-.control{
-	height: 45px;
-	width: 45px;
-	position:absolute;
-	top: 30%;
-	left: 31%;
-}
-
-.colorBar{
-	width:12px;
-	opacity: 1;
-	height:4px;
-	position:absolute;
-	background-color: #111;
-	-moz-transition:0.3s;
-	-webkit-transition:0.3s;
-	-o-transition:0.3s;
-	transition:0.3s;
-	-webkit-box-shadow: inner 0px 1px 5px #red;
-	border-bottom: 1px solid #272727;
-	border-left: 1px solid #272727;
-	-webkit-border-radius: 4px;
-}
-
-.colorBar.active{
-	opacity:1;
-}
-
-
-/*----------------------------
-	Button
------------------------------*/
-
-button.cupid-green {
-  background-color: #7fbf4d;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#7fbf4d), to(#63a62f));
-  /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
-  background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
-  background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
-  background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
-  background-image: linear-gradient(top, #7fbf4d, #63a62f);
-  border: none;
-  -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
-  -moz-box-shadow: inset 0 1px 0 0 #96ca6d;
-  -ms-box-shadow: inset 0 1px 0 0 #96ca6d;
-  -o-box-shadow: inset 0 1px 0 0 #96ca6d;
-  box-shadow: inset 0 1px 0 0 #96ca6d;
-  color: #fff;
-  height: 25px;
-  line-height: 25px;
-  font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-  line-height: 1;
-  text-align: center;
-  text-shadow: 0 -1px 0 #4c9021;
-  width: 50px; }
-  button.cupid-green:hover {
-    background-color: #76b347;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#76b347), to(#5e9e2e));
-    /* Saf4+, Chrome */
-    background-image: -webkit-linear-gradient(top, #76b347, #5e9e2e);
-    background-image: -moz-linear-gradient(top, #76b347, #5e9e2e);
-    background-image: -ms-linear-gradient(top, #76b347, #5e9e2e);
-    background-image: -o-linear-gradient(top, #76b347, #5e9e2e);
-    background-image: linear-gradient(top, #76b347, #5e9e2e);
-    -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
-    -moz-box-shadow: inset 0 1px 0 0 #8dbf67;
-    -ms-box-shadow: inset 0 1px 0 0 #8dbf67;
-    -o-box-shadow: inset 0 1px 0 0 #8dbf67;
-    box-shadow: inset 0 1px 0 0 #8dbf67;
-    cursor: pointer; }
-  button.cupid-green:active {
-    border: 1px solid #5b992b;
-    border-bottom: 1px solid #538c27;
-    -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-    -moz-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-    -ms-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-    -o-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
-    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; }
