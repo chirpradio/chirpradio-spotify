@@ -6,6 +6,10 @@
 /* Color Usage */
 /* These are some common custom mixins go here */
 
+nav .toggle { display: inline; float: left; -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -o-transition: all 0.2s; transition: all 0.2s; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; background: url(CHIRPradio.png) no-repeat; background-size:320px 80px; width: 330px; height: 80px; padding-top: 10px; margin-right: 10px; overflow: hidden; background-color: #fff; }
+
+nav .big { font-size: 4.0em; font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2","Arial",Helmet,Freesans,sans-serif; color: #822036; font-weight: 500; margin-top: 5%;}
+
 .tracks { margin-top: 20px; clear: both; overflow: hidden; }
 @media (min-width: 768px) { 
   .tracks { margin-top: 0; } }
