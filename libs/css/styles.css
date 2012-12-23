@@ -10,14 +10,16 @@
 
 header { background: #3f3437; background: rgba(0, 0, 0, 0.75); text-align: center; }
 
-.notification { background: #822036; background: rgba(238, 0, 50, 0.4); padding: 10px 20px 7px; color: #FBFB77; line-height: 1.6; font-size: 1.2em; }
+.notification { background: #822036; padding: 10px 20px 7px; }
+
+.notification a { background: #822036; padding: 10px 20px 7px; color: #FBFB77; line-height: 1.6; font-size: 1.2em; font-family: "proxima-nova-1", "proxima-nova-2", "Arial", Helmet, Freesans, sans-serif; }
 
 
 header nav li a { color: white; display: block; font-family: "proxima-nova-extra-condensed-1", "proxima-nova-extra-condensed-2", "Arial Black", Helmet, Freesans, sans-serif; font-weight: 900; text-transform: uppercase; font-size: 1.7em; padding: 5px 0; line-height: 1; }
 
 header nav ol { display: block !important; padding: 2px 0 0 80px; min-height: 65px; height: auto !important; height: 55px; } }
 
-header nav ol li { font-size: 4.0em; font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2","Arial Black",Helmet,Freesans,sans-serif; color: #822036; font-weight: 100; margin-top: 5%;}
+.headertext { font-size: 4.0em; font-family: "proxima-nova-extra-condensed-1","proxima-nova-extra-condensed-2","Arial Black", Helmet,Freesans, sans-serif; color: #822036; font-weight: 100; margin-top: 5%;}
 
 .tracks { margin-top: 20px; clear: both; overflow: hidden; }
 @media (min-width: 768px) { 
