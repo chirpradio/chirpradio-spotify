@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="background-color: #fff;">
 <head>
 	<meta charset="utf-8">
 	<title>CHIRP Radio</title>
@@ -16,31 +16,32 @@
 	    @import url('sp://import/css/list.css');    
 	</style>
 </head>
-<body>
-	<!--div id="container"></div-->
+<body style="background-color: #fff;">
 	<header>
-	 <article class="notification">
-		<a href="http://v2.chirpradio.org" title="Head on  to the homepage">CHIRPRadio.org</a>
-    </article>
-	  <nav>
-      <ol>
-        <li class="home">
-          <a href="http://v2.chirpradio.org" title="Head on back to the homepage">
-          </a>
-        </li>
-        <li><article class="headertext">TOP&nbsp;ALBUMS</article></li>
-       </ol>
-    </nav>
-</header>
-	<section class="tracks" id="container"></section>
+		<article class="notification">
+			<a href="http://v2.chirpradio.org" title="Head on  to the homepage">CHIRPRadio.org</a>
+	    </article>
+		<nav>
+	      <ol>
+	        <li class="home">
+	          <a href="http://v2.chirpradio.org" title="Head on back to the homepage">
+	          </a>
+	        </li>
+	        <li id="headertext">TOP&nbsp;ALBUMS</li>
+	       </ol>
+	    </nav>
+	</header>
+
+	<section class="tracks" id="container">
+		<img id="spinner" src="libs/img/spinner60.gif"></img>
+	</section>
+
 	<script src="libs/js/jquery.js"></script>
 	<script src="libs/js/jquery-ui.min.js"></script>
-
 	<script src="libs/js/underscore.js"></script>
 	<script src="libs/js/transform.js"></script>
 
-	<script>
-	    
+	<script>	    
 	    var ChirpRadio = ChirpRadio || {};
 	
 		$(function() {

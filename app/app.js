@@ -122,6 +122,10 @@ var App = function()
     }
 
     var onTopAlbumsLookupReturn = function(err, albums) {
+
+        $('#spinner').hide();
+        $(document.body).css("background-color", "#ECEBE8")
+        
         albums.this_week.releases.forEach(function (top_album) {
             data=new Object();
             data.title = top_album.release
