@@ -37,7 +37,7 @@ exports.getTopAlbumsFile  = function (callback) {
 exports.getTopAlbums = function (callback) {
   $.ajax({
     async: true,
-    url: 'https://chirpradio.appspot.com/api/stats',
+    url: 'https://chirpradio.appspot.com/api/stats?src=chirpradio-spotify',
     dataType: "json",
     success: function(data) {
       //jsonObject = jQuery.parseJSON( data );
