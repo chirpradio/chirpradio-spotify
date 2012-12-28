@@ -3,6 +3,7 @@
 1. google groups discussion: https://groups.google.com/forum/#!msg/chirpdev/MNPPRONHCd0/ZnONh-7H_nIJ
 1. spotify docs: https://developer.spotify.com/technologies/apps/guidelines/integration/
 1. submission process: https://developer.spotify.com/technologies/apps/process/
+1. CHIRP statistics API:  CHIRP statistics. Check it out: http://code.google.com/p/chirpradio/wiki/TheChirpApi#Statistics
 
 **To install locally**
 
