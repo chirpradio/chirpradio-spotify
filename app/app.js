@@ -66,7 +66,8 @@ var Album = function(data)
             player.track = null;
 
             //adding artifical delay for an unexplainable bug (album cover not showing)
-            setTimeout(function() { player.context = album;}, 100);
+            setTimeout(function() { player.context = album;}, 500);
+            //player.context = album;
 
             //custom album cover image
             //var image = new views.Image("mySource", album.data.cover, album.name);
