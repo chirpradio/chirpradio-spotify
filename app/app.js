@@ -66,7 +66,7 @@ var Album = function(data)
             player.track = null;
 
             //adding artifical delay for an unexplainable bug (album cover not showing)
-            setTimeout(function() { player.context = album;}, 500);
+            setTimeout(function() { player.context = album;}, 1000);
             //player.context = album;
 
             //custom album cover image
