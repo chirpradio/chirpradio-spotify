@@ -7,8 +7,8 @@
 
 **To install locally**
 
-1. put this github repo in `/Users/username/Spotify/chirpradio` (on Mac OS X)
-1. In the Spotify desktop app, enter this in search bar: `spotify:app:chirp`
+1. put this github repo directory (`chirpradio-spotify`) in `/Users/username/Spotify/` (on Mac OS X)
+1. In the Spotify desktop app, enter this in search bar in the upper left corner: `spotify:app:chirp`
 
 **To debug or use HTML/CSS inspector**
 
