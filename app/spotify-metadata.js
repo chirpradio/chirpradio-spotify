@@ -49,6 +49,21 @@ exports.getTopAlbums = function (callback) {
   });
 }
 
+exports.getBestOf2012 = function (callback) {
+  $.ajax({
+    async: true,
+    url: 'best_of_2012.json',
+    dataType: "json",
+    success: function(data) {
+      //jsonObject = jQuery.parseJSON( data );
+      if (callback) callback(null, data);
+    },
+    error: function(data) {
+      if (callback) callback(data);
+    },
+  });
+}
+
 //search for album by artist name and album name and trigger callback afterwards
 exports.searchForAlbum = function (artist, album, callback) {
   var q = $.param({q: ['artist:' + artist, 'album:' + album].join(' ')});

@@ -10,5 +10,19 @@
 	"SupportedLanguages": [
 		"en"
 	],
-    "RequiredPermissions": ["http://*.spotify.com", "https://chirpradio.appspot.com"] 
+    "RequiredPermissions": ["http://*.spotify.com", "https://chirpradio.appspot.com"],
+	"DefaultTabs": [
+		{
+			"arguments": "top_recent",
+			"title": {
+				"en": "Recent top albums"
+			}
+		},
+		{
+			"arguments": "best_of_2012",
+			"title": {
+				"en": "Best of 2012"
+			}
+        }
+	]
 }
