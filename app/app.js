@@ -4,15 +4,56 @@ var spm = sp.require("app/spotify-metadata"),
     ui  = sp.require("sp://import/scripts/ui");
  views  = sp.require("sp://import/scripts/api/views");
 
+//callback function when top albums are looked up
+var onTopAlbumsLookupReturnFile = function(err, albums) {
+    albums.top_albums.forEach(function (top_album) {
+        data=new Object();
+        data.title = top_album.release
+        data.artist_name = top_album.artist
+        data.artist_id=0;
+        album = new Album(data);
+        album.draw(0);
+    });
+}
+
+var onTopAlbumsLookupReturn = function(err, albums) {
+    $('#spinner').hide();
+    $(document.body).css("background-color", "#ECEBE8")
+    
+    albums.this_week.releases.forEach(function (top_album) {
+        data=new Object();
+        data.title = top_album.release
+        data.artist_name = top_album.artist
+        data.artist_id=0;
+        data.container_id = "top_recent"
+        album = new Album(data);
+        album.draw(0);
+    });
+}
+
+var onBestOfAlbumsLookupReturn = function(err, albums) {
+    $('#spinner').hide();
+    $(document.body).css("background-color", "#ECEBE8")
+    
+    albums.top_albums.forEach(function (top_album) {
+        data=new Object();
+        data.title = top_album.release
+        data.artist_name = top_album.artist
+        data.artist_id=0;
+        data.container_id = "best_of_2012"        
+        album = new Album(data);
+        album.draw(0);
+    });
+}
 
 m.application.observe(m.EVENT.ARGUMENTSCHANGED, handleArgs);
 
 function handleArgs() {
     var args = m.application.arguments;
     console.log(args);
-    $(".tabpage").hide();   // Hide all sections
+    $(".tracks").hide();   // Hide all sections
     $("#"+args[0]).show();  // Show current section
-    spm.getBestOf2012(onTopAlbumsLookupReturn);
+    spm.getBestOf2012(onBestOfAlbumsLookupReturn);
 
     // If there are multiple arguments, handle them accordingly
     // if(args[1]) {       
@@ -31,7 +72,8 @@ var Album = function(data)
 {
     var title    = data.title,
         artist   = data.artist_name,
-        description,
+        description = data.description,
+        container_id = data.container_id,
         artistId = data.artist_id, 
         top      = 0,
         album    = null,
@@ -99,7 +141,7 @@ var Album = function(data)
             //$(player.node).find('.sp-player-image').replaceWith(image.node);
 
             $(elem).prepend(player.node);
-            $('#container').append(elem)
+            $("#"+container_id).append(elem)
 
         } else {
             console.log('The album "' + artist + ' - ' + album_name + '" was not found by Spotify album search API.');
@@ -135,33 +177,6 @@ var Album = function(data)
 
 var App = function()
 {
-    //callback function when top albums are looked up
-    var onTopAlbumsLookupReturnFile = function(err, albums) {
-        albums.top_albums.forEach(function (top_album) {
-            data=new Object();
-            data.title = top_album.release
-            data.artist_name = top_album.artist
-            data.artist_id=0;
-            album = new Album(data);
-            album.draw(0);
-        });
-    }
-
-    var onTopAlbumsLookupReturn = function(err, albums) {
-
-        $('#spinner').hide();
-        $(document.body).css("background-color", "#ECEBE8")
-        
-        albums.this_week.releases.forEach(function (top_album) {
-            data=new Object();
-            data.title = top_album.release
-            data.artist_name = top_album.artist
-            data.artist_id=0;
-            album = new Album(data);
-            album.draw(0);
-        });
-    }
-
     return {
         init: function()
         {

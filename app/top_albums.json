@@ -1,40 +1,288 @@
 {
-  "top_albums": [
-    {
-      "artist": "Chandeliers",
-      "label": "Pickled Egg",
-      "release": "Dirty Moves",
-      "play_count": "15",
-      "lastfm_urls": {
-        "med_image": "http://userserve-ak.last.fm/serve/64s/68918564.jpg",
-        "sm_image": "http://userserve-ak.last.fm/serve/34s/68918564.jpg",
-        "_processed": true,
-        "large_image": "http://userserve-ak.last.fm/serve/174s/68918564.jpg"
-      }
-    },
-    {
-      "artist": "The Promise Ring",
-      "label": "ANTI-",
-      "release": "Wood/Water",
-      "play_count": "10",
-      "lastfm_urls": {
-        "med_image": "http://userserve-ak.last.fm/serve/64s/8670313.jpg",
-        "sm_image": "http://userserve-ak.last.fm/serve/34s/8670313.jpg",
-        "_processed": true,
-        "large_image": "http://userserve-ak.last.fm/serve/174s/8670313.jpg"
-      }
-    },
-    {
-      "artist": "Beck",
-      "label": "DGC",
-      "release": "Midnite Vultures",
-      "play_count": "5",
-      "lastfm_urls": {
-        "med_image": "http://userserve-ak.last.fm/serve/64s/84092723.png",
-        "sm_image": "http://userserve-ak.last.fm/serve/34s/84092723.png",
-        "_processed": true,
-        "large_image": "http://userserve-ak.last.fm/serve/174s/84092723.png"
-      }
-    }
-  ]
+   "this_week": {
+      "start": "2012-12-29",
+      "end": "2013-01-05",
+      "releases": [
+         {
+            "play_count": 69,
+            "release": "Behind the Mirror",
+            "label": "FDH/Red Lounge",
+            "id": "8ea25a4503a508fb122c10e9c2271e6b41a7bd8b",
+            "artist": "Outer Minds"
+         },
+         {
+            "play_count": 65,
+            "release": "The Odds",
+            "label": "Dischord",
+            "id": "bf41b36477eef1e2547e1fdd0aa8af136b1cc860",
+            "artist": "The Evens"
+         },
+         {
+            "play_count": 62,
+            "release": "The Corner Man",
+            "label": "Empty Cellar",
+            "id": "1a656efd2866350911c50715e1fb89838afffa5e",
+            "artist": "The Cairo Gang"
+         },
+         {
+            "play_count": 61,
+            "release": "Local Business",
+            "label": "XL",
+            "id": "3c147611b2ab6441fcc65215f66c3e20508af083",
+            "artist": "Titus Andronicus"
+         },
+         {
+            "play_count": 60,
+            "release": "Our House On The Hill",
+            "label": "Woodsist",
+            "id": "349b66242174040183e054f232a89347fe11d8e9",
+            "artist": "The Babies"
+         },
+         {
+            "play_count": 47,
+            "release": "The Bears For Lunch",
+            "label": "GBV Inc.",
+            "id": "7f5446aae401b0b5d75d90af90c46313eab0b0f2",
+            "artist": "Guided By Voices"
+         },
+         {
+            "play_count": 46,
+            "release": "Free Reign",
+            "label": "Domino",
+            "id": "c184a054eaad56c58c3ad923e1dae9b3cb5ecb8c",
+            "artist": "Clinic"
+         },
+         {
+            "play_count": 45,
+            "release": "True",
+            "label": "Terrible",
+            "id": "92d8208dc8a755d0dbea640a876c07202a3a846c",
+            "artist": "Solange"
+         },
+         {
+            "play_count": 45,
+            "release": "Beyul",
+            "label": "Profound Lore",
+            "id": "52dd8dcc475d7ced5c5ddbceea71cf3259b4329d",
+            "artist": "Yakuza"
+         },
+         {
+            "play_count": 42,
+            "release": "(III)",
+            "label": "Casablanca",
+            "id": "e105516ddd9a28eb07aa8d032ea1df33d1f31325",
+            "artist": "Crystal Castles"
+         },
+         {
+            "play_count": 39,
+            "release": "good kid, m.A.A.d city",
+            "label": "Interscope",
+            "id": "8b45b810c7268dee4b7eab4d7d9de28ec05487a6",
+            "artist": "Kendrick Lamar"
+         },
+         {
+            "play_count": 38,
+            "release": "Sic Alps",
+            "label": "Drag City",
+            "id": "f6d2582d0744f53f832fc24684f035e3f0dc6285",
+            "artist": "Sic Alps"
+         },
+         {
+            "play_count": 38,
+            "release": "Secret Enigma",
+            "label": "B-Music",
+            "id": "f1a8649db31fffd7d56618dece8c5af977e552e6",
+            "artist": "Andrzej Korzynski"
+         },
+         {
+            "play_count": 38,
+            "release": "A World Out of Time",
+            "label": "Thrill Jockey",
+            "id": "7580a2a45693f1aa6df15a922945fbd58036fcf1",
+            "artist": "Eternal Tapestry"
+         },
+         {
+            "play_count": 37,
+            "release": "The Haunted Man",
+            "label": "Capitol",
+            "id": "2917cc4d95d1ad60195f4c97a3d14d4232f2b4c8",
+            "artist": "Bat For Lashes"
+         },
+         {
+            "play_count": 37,
+            "release": "Smart Bar Chicago 1985",
+            "label": "Goofin'",
+            "id": "78ddf3758524ab36cfbf3f4849e07c55288a5ef3",
+            "artist": "Sonic Youth"
+         },
+         {
+            "play_count": 36,
+            "release": "Horizon Unlimited",
+            "label": "Knitting Factory",
+            "id": "2604febc42f390c6d9d3168ae5f54c6e830743a7",
+            "artist": "The Lijadu Sisters"
+         },
+         {
+            "play_count": 35,
+            "release": "Sorry To Bother You",
+            "label": "ANTI-",
+            "id": "8b22881596e6321bb9a676a6355e0ae78593eba0",
+            "artist": "The Coup"
+         },
+         {
+            "play_count": 34,
+            "release": "Silent Congas",
+            "label": "DFA",
+            "id": "0cf8eca42ea1aadc67674ba0c9831e27b89264e4",
+            "artist": "Larry Gus"
+         },
+         {
+            "play_count": 34,
+            "release": "Daughter of Cloud",
+            "label": "Polyvinyl",
+            "id": "d023b65f4133cc09c6c7409de44d3d0140fd86fd",
+            "artist": "Of Montreal"
+         },
+         {
+            "play_count": 33,
+            "release": "Pale Fire",
+            "label": "The Control Group",
+            "id": "d55851c948646f8ee262f3cb6b05ee6d1037de2e",
+            "artist": "El Perro Del Mar"
+         },
+         {
+            "play_count": 33,
+            "release": "Death Proof EP",
+            "label": "Have 10p",
+            "id": "dc9944fcaf53fcaac0fb94db61c9961f7cc26a2e",
+            "artist": "Kate Nash"
+         },
+         {
+            "play_count": 32,
+            "release": "Million Years",
+            "label": "Ernest Jenning",
+            "id": "fca319246a46d833603622645162574b01033c7e",
+            "artist": "Wild Yaks"
+         },
+         {
+            "play_count": 32,
+            "release": "Catacombs After Party",
+            "label": "Trashy Creatures/Burger",
+            "id": "e31ad4b32be6b657078fa4f2156d3ada5c93a299",
+            "artist": "Tiger High"
+         },
+         {
+            "play_count": 31,
+            "release": "Mumps, etc.",
+            "label": "Anticon.",
+            "id": "ab1bf25df39aed1aec26bc8ec2fae52631c9b326",
+            "artist": "Why?"
+         },
+         {
+            "play_count": 31,
+            "release": "Exu",
+            "label": "Dune",
+            "id": "ae5bd97316be517837edec42774227c4341dac7d",
+            "artist": "Verma"
+         },
+         {
+            "play_count": 30,
+            "release": "Victory",
+            "label": "Fake Four Inc.",
+            "id": "08b5a738ad07db6b8dff02511acff38c372432dd",
+            "artist": "Child Actor"
+         },
+         {
+            "play_count": 30,
+            "release": "GEM",
+            "label": "FatCat",
+            "id": "73f1f3f7a65d700bcafbcc132a4f10e3f1e14ac5",
+            "artist": "U.S. Girls"
+         },
+         {
+            "play_count": 30,
+            "release": "Eclipsing",
+            "label": "Cloud Recordings",
+            "id": "ea24dde55340a5f1b2bf6f3ee9c361fcd871bc5c",
+            "artist": "Dream Boat"
+         },
+         {
+            "play_count": 29,
+            "release": "No Can Do",
+            "label": "Triple Crown Audio",
+            "id": "cbb9dd44609f16cd7997dfb2f279b5e38de7cb61",
+            "artist": "Ladyhawk"
+         },
+         {
+            "play_count": 28,
+            "release": "Wild Race EP",
+            "label": "ANTI-",
+            "id": "33b64e79b2b9182137a0248515c731c1dd3f2f45",
+            "artist": "Dr. Dog"
+         },
+         {
+            "play_count": 28,
+            "release": "Form a Sign",
+            "label": "Kindercore",
+            "id": "e205dd60155f2548cad469c2eb298f0f56e77369",
+            "artist": "Grape Soda"
+         },
+         {
+            "play_count": 28,
+            "release": "Flume",
+            "label": "Future Classic",
+            "id": "9bc93c7cf9b286f3ee0a1a5834e7dbaafbb5652e",
+            "artist": "Flume"
+         },
+         {
+            "play_count": 27,
+            "release": "The Wildfire EP",
+            "label": "self-released",
+            "id": "4762ac1f79dd40536fabb163429f1b03ff35b8d7",
+            "artist": "The Riverbreaks"
+         },
+         {
+            "play_count": 27,
+            "release": "New Relics",
+            "label": "Rock Action",
+            "id": "875faa064fe36f7e32688aba4a81e4d8b4fb2f66",
+            "artist": "Errors"
+         },
+         {
+            "play_count": 27,
+            "release": "Gentle Stream",
+            "label": "Partisan",
+            "id": "5eb466bf95366fd46c23e1ec154723f8c888d84d",
+            "artist": "The Amazing"
+         },
+         {
+            "play_count": 27,
+            "release": "Bish Bosch",
+            "label": "4AD",
+            "id": "65d445db8a7ea467b362fd5788c6c513a79a9f46",
+            "artist": "Scott Walker"
+         },
+         {
+            "play_count": 27,
+            "release": "333",
+            "label": "Latenight/Weeknight",
+            "id": "580be2faf24b5768ae3fc6506befebbc852d0bd8",
+            "artist": "A Shoreline Dream"
+         },
+         {
+            "play_count": 26,
+            "release": "On Triple Beams",
+            "label": "In The Red",
+            "id": "54cb04589605d93bcbf83f4809d5226fbbe1f5c5",
+            "artist": "Tyvek"
+         },
+         {
+            "play_count": 26,
+            "release": "Hindsight",
+            "label": "Tweed River Productions",
+            "id": "68e02127d95537c5225e384b5f52b2a76f70d326",
+            "artist": "Bow Thayer"
+         }
+      ]
+   }
 }
