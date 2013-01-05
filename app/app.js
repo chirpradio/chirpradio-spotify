@@ -34,16 +34,20 @@ var onTopAlbumsLookupReturn = function(err, albums) {
 var onBestOfAlbumsLookupReturn = function(err, albums) {
     $('#spinner').hide();
     $(document.body).css("background-color", "#ECEBE8")
-    
-    albums.top_albums.forEach(function (top_album) {
-        data=new Object();
-        data.title = top_album.release
-        data.artist_name = top_album.artist
-        data.artist_id=0;
-        data.container_id = "best_of_2012"        
-        album = new Album(data);
-        album.draw(0);
-    });
+
+    if ($("#best_of_2012").hasClass("loaded") == false) {
+        albums.top_albums.forEach(function (top_album) {
+            data=new Object();
+            data.title = top_album.release
+            data.artist_name = top_album.artist
+            data.artist_id=0;
+            data.container_id = "best_of_2012"        
+            album = new Album(data);
+            album.draw(0);
+        });
+    }
+
+    $("#best_of_2012").addClass("loaded")
 }
 
 m.application.observe(m.EVENT.ARGUMENTSCHANGED, handleArgs);
