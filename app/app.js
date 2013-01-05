@@ -4,10 +4,34 @@ var spm = sp.require("app/spotify-metadata"),
     ui  = sp.require("sp://import/scripts/ui");
  views  = sp.require("sp://import/scripts/api/views");
 
+
+m.application.observe(m.EVENT.ARGUMENTSCHANGED, handleArgs);
+
+function handleArgs() {
+    var args = m.application.arguments;
+    console.log(args);
+    $(".tabpage").hide();   // Hide all sections
+    $("#"+args[0]).show();  // Show current section
+    spm.getBestOf2012(onTopAlbumsLookupReturn);
+
+    // If there are multiple arguments, handle them accordingly
+    // if(args[1]) {       
+    //     switch(args[0]) {
+    //         case "top_recent":
+                
+    //             break;
+    //         case "best_of_2012":
+    //             socialInput(args[1]);
+    //             break;
+    //     }
+    // }
+};
+
 var Album = function(data)
 {
     var title    = data.title,
         artist   = data.artist_name,
+        description,
         artistId = data.artist_id, 
         top      = 0,
         album    = null,
@@ -40,6 +64,7 @@ var Album = function(data)
         if (albums && albums.length > 0) {
             album = albums[0];
             id  = album.uri.split(":")[2];
+            //album = m.Album.fromURI(album.uri);
             $(elem).attr("id", id);
             //var img = new ui.SPImage(album.data.cover);
             //$(elem).append(img.node);
