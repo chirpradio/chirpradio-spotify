@@ -36,6 +36,11 @@ var onBestOfAlbumsLookupReturn = function(err, albums) {
     $(document.body).css("background-color", "#ECEBE8")
 
     if ($("#best_of_2012").hasClass("loaded") == false) {
+        elem = $("<section class='track' id='" + year + "'></section");   
+        
+        //TODO: add after top_recent section instead of end of body
+        $(document.body).append(elem);       
+
         albums.top_albums.forEach(function (top_album) {
             data=new Object();
             data.title = top_album.release
@@ -57,9 +62,14 @@ function handleArgs() {
     console.log(args);
     $(".tracks").hide();   // Hide all sections
     $("#"+args[0]).show();  // Show current section
-    spm.getBestOf2012(onBestOfAlbumsLookupReturn);
 
-    // If there are multiple arguments, handle them accordingly
+    for (year = 2009; year <= 2012; year++) {
+        spm.getBestOf(onBestOfAlbumsLookupReturn, year);
+    }
+
+/*    year = 2012;
+    spm.getBestOf(onBestOfAlbumsLookupReturn, year);
+*/    // If there are multiple arguments, handle them accordingly
     // if(args[1]) {       
     //     switch(args[0]) {
     //         case "top_recent":
