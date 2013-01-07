@@ -25,7 +25,7 @@ var onTopAlbumsLookupReturn = function(err, albums) {
         data.title = top_album.release
         data.artist_name = top_album.artist
         data.artist_id=0;
-        data.container_id = "top_recent"
+        data.container_id = "top_recent_albums"
         album = new Album(data);
         album.draw(0);
     });
@@ -35,8 +35,8 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, num_albums) {
     $('#spinner').hide();
     $(document.body).css("background-color", "#ECEBE8")
 
-    if ($("#best_of_2012").hasClass("loaded") == false) {
-        elem = $("<div><h2>Best of "+ year +"</h2><section id='best_of_" + year + "'></section><a href='#'' onclick='showBestOf(" + year + ");' return false;'>See More</a></div>");   
+    if ($("#best_of_"+year).hasClass("loaded") == false) {
+        elem = $("<div class='page best_of_overview'><h2>Best of "+ year +"</h2><section id='best_of_" + year + "'></section><a href='#'' onclick='showBestOf(" + year + ");' return false;'>See More</a></div>");   
         
         //TODO: add after top_recent section instead of end of body
         $(document.body).append(elem);       
@@ -58,7 +58,7 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, num_albums) {
         });
     }
 
-    $("#best_of_2012").addClass("loaded")
+    $("#best_of_"+year).addClass("loaded")
 }
 
 m.application.observe(m.EVENT.ARGUMENTSCHANGED, switchTabs);
@@ -66,8 +66,8 @@ m.application.observe(m.EVENT.ARGUMENTSCHANGED, switchTabs);
 function switchTabs() {
     var args = m.application.arguments;
     console.log(args);
-    $(".tracks").hide();   // Hide all sections
-    $("#"+args[0]).show();  // Show current section
+    $(".page").hide();   // Hide all sections
+    $("."+args[0]).show();  // Show current section
 
     for (the_year = 2009; the_year <= 2012; the_year++) {
     //for (the_year = 2012; the_year >= 2009; the_year--) {
@@ -76,7 +76,7 @@ function switchTabs() {
 };
 
 function showBestOf(the_year) {
-    $(".tracks").hide();   // Hide all sections    
+    $(".page").hide();   // Hide all sections
 }
 
 var Album = function(data)

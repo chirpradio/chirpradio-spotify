@@ -13,15 +13,15 @@
     "RequiredPermissions": ["http://*.spotify.com", "https://chirpradio.appspot.com"],
 	"DefaultTabs": [
 		{
-			"arguments": "top_recent",
+			"arguments": "top_recent_albums",
 			"title": {
 				"en": "Recent top albums"
 			}
 		},
 		{
-			"arguments": "best_of_2012",
+			"arguments": "best_of_overview",
 			"title": {
-				"en": "Best of 2012"
+				"en": "Albums of the year"
 			}
         }
 	]
