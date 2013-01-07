@@ -31,7 +31,7 @@ var onTopAlbumsLookupReturn = function(err, albums) {
     });
 }
 
-var onBestOfAlbumsLookupReturn = function(err, albums, year) {
+var onBestOfAlbumsLookupReturn = function(err, albums, year, num_albums) {
     $('#spinner').hide();
     $(document.body).css("background-color", "#ECEBE8")
 
@@ -41,7 +41,12 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year) {
         //TODO: add after top_recent section instead of end of body
         $(document.body).append(elem);       
 
-        albums.top_albums.forEach(function (top_album) {
+        if(albums.top_albums.length > num_albums)
+            short_list = albums.top_albums[0..num_albums+1];
+        else
+            short_list = albums.top_albums;
+
+        short_list.forEach(function (top_album) {
             data=new Object();
             data.title = top_album.release
             data.artist_name = top_album.artist
@@ -66,7 +71,7 @@ function handleArgs() {
 
     for (the_year = 2009; the_year <= 2012; the_year++) {
     //for (the_year = 2012; the_year >= 2009; the_year--) {
-        spm.getBestOf(onBestOfAlbumsLookupReturn, the_year);
+        spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 5);
     }
 };
 
