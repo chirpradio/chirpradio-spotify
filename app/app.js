@@ -36,7 +36,7 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year) {
     $(document.body).css("background-color", "#ECEBE8")
 
     if ($("#best_of_2012").hasClass("loaded") == false) {
-        elem = $("<section class='track'><h2>"+ year +"</h2><section class='track' id='best_of_" + year + "'></section></section>");   
+        elem = $("<div><h2>Best of "+ year +"</h2><section id='best_of_" + year + "'></section></div>");   
         
         //TODO: add after top_recent section instead of end of body
         $(document.body).append(elem);       
@@ -45,6 +45,7 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year) {
             data=new Object();
             data.title = top_album.release
             data.artist_name = top_album.artist
+            data.description = top_album.description
             data.artist_id=0;
             data.container_id = "best_of_" + year;       
             album = new Album(data);
@@ -64,22 +65,9 @@ function handleArgs() {
     $("#"+args[0]).show();  // Show current section
 
     for (the_year = 2009; the_year <= 2012; the_year++) {
+    //for (the_year = 2012; the_year >= 2009; the_year--) {
         spm.getBestOf(onBestOfAlbumsLookupReturn, the_year);
     }
-
-/*    year = 2012;
-    spm.getBestOf(onBestOfAlbumsLookupReturn, year);
-*/    // If there are multiple arguments, handle them accordingly
-    // if(args[1]) {       
-    //     switch(args[0]) {
-    //         case "top_recent":
-                
-    //             break;
-    //         case "best_of_2012":
-    //             socialInput(args[1]);
-    //             break;
-    //     }
-    // }
 };
 
 var Album = function(data)
@@ -97,7 +85,7 @@ var Album = function(data)
                    "<p>" +
                         "<strong class='artist'>" + artist + "</strong>" +
                         //"<span class='song'>" + title + "</span> from" + 
-                        "<em class='album'>" + title + "</em>" +
+                        "<em class='album'>" + title + "</em>" + (description ? description.substring(0, 50)+"..." : "") +
                         //<span class="label">(Island)</span> 
                     "</p>" +
                     "<button id='savePlaylist' class='add-playlist sp-button sp-icon'> <span class='sp-plus'></span>Add as Playlist</button>" +
@@ -155,13 +143,13 @@ var Album = function(data)
             //$(player.node).find('.sp-player-image').replaceWith(image.node);
 
             $(elem).prepend(player.node);
-            $("#"+container_id).append(elem)
+            $("#"+container_id).append(elem);
 
         } else {
             console.log('The album "' + artist + ' - ' + album_name + '" was not found by Spotify album search API.');
         }
     }
-    
+
     spm.searchForAlbum(artist, title, onSearchReturn);
     
     return {
