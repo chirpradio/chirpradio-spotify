@@ -31,12 +31,12 @@ var onTopAlbumsLookupReturn = function(err, albums) {
     });
 }
 
-var onBestOfAlbumsLookupReturn = function(err, albums) {
+var onBestOfAlbumsLookupReturn = function(err, albums, year) {
     $('#spinner').hide();
     $(document.body).css("background-color", "#ECEBE8")
 
     if ($("#best_of_2012").hasClass("loaded") == false) {
-        elem = $("<section class='track' id='" + year + "'></section");   
+        elem = $("<section class='track'><h2>"+ year +"</h2><section class='track' id='best_of_" + year + "'></section></section>");   
         
         //TODO: add after top_recent section instead of end of body
         $(document.body).append(elem);       
@@ -46,7 +46,7 @@ var onBestOfAlbumsLookupReturn = function(err, albums) {
             data.title = top_album.release
             data.artist_name = top_album.artist
             data.artist_id=0;
-            data.container_id = "best_of_2012"        
+            data.container_id = "best_of_" + year;       
             album = new Album(data);
             album.draw(0);
         });
@@ -63,8 +63,8 @@ function handleArgs() {
     $(".tracks").hide();   // Hide all sections
     $("#"+args[0]).show();  // Show current section
 
-    for (year = 2009; year <= 2012; year++) {
-        spm.getBestOf(onBestOfAlbumsLookupReturn, year);
+    for (the_year = 2009; the_year <= 2012; the_year++) {
+        spm.getBestOf(onBestOfAlbumsLookupReturn, the_year);
     }
 
 /*    year = 2012;
