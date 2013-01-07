@@ -36,7 +36,7 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, num_albums) {
     $(document.body).css("background-color", "#ECEBE8")
 
     if ($("#best_of_2012").hasClass("loaded") == false) {
-        elem = $("<div><h2>Best of "+ year +"</h2><section id='best_of_" + year + "'></section></div>");   
+        elem = $("<div><h2>Best of "+ year +"</h2><section id='best_of_" + year + "'></section><a href='#'' onclick='showBestOf(" + year + ");' return false;'>See More</a></div>");   
         
         //TODO: add after top_recent section instead of end of body
         $(document.body).append(elem);       
@@ -61,9 +61,9 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, num_albums) {
     $("#best_of_2012").addClass("loaded")
 }
 
-m.application.observe(m.EVENT.ARGUMENTSCHANGED, handleArgs);
+m.application.observe(m.EVENT.ARGUMENTSCHANGED, switchTabs);
 
-function handleArgs() {
+function switchTabs() {
     var args = m.application.arguments;
     console.log(args);
     $(".tracks").hide();   // Hide all sections
@@ -74,6 +74,10 @@ function handleArgs() {
         spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 5);
     }
 };
+
+function showBestOf(the_year) {
+    $(".tracks").hide();   // Hide all sections    
+}
 
 var Album = function(data)
 {
