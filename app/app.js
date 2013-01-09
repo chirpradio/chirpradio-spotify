@@ -4,6 +4,10 @@ var spm = sp.require("app/spotify-metadata"),
     ui  = sp.require("sp://import/scripts/ui");
  views  = sp.require("sp://import/scripts/api/views");
 
+function showBestOf(the_year) {
+    $(".page").hide();   // Hide all sections
+}
+
 //callback function when top albums are looked up
 var onTopAlbumsLookupReturnFile = function(err, albums) {
     albums.top_albums.forEach(function (top_album) {
@@ -48,9 +52,9 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, num_albums) {
 
         short_list.forEach(function (top_album) {
             data=new Object();
-            data.title = top_album.release
-            data.artist_name = top_album.artist
-            data.description = top_album.description
+            data.title = top_album.release;
+            data.artist_name = top_album.artist;
+            data.description = top_album.description;
             data.artist_id=0;
             data.container_id = "best_of_" + year;       
             album = new Album(data);
