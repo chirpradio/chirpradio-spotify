@@ -79,10 +79,6 @@ function switchTabs() {
     }
 };
 
-function showBestOf(the_year) {
-    $(".page").hide();   // Hide all sections
-}
-
 var Album = function(data)
 {
     var title    = data.title,
