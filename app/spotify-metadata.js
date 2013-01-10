@@ -49,7 +49,7 @@ exports.getTopAlbums = function (callback) {
   });
 }
 
-exports.getBestOf = function (callback, the_year, num_albums) {
+exports.getBestOf = function (callback, the_year, begin_album, end_album) {
   $.ajax({
     async: true,
     url: 'best_of_2012.json',
@@ -57,7 +57,7 @@ exports.getBestOf = function (callback, the_year, num_albums) {
     dataType: "json",
     success: function(data) {
       //jsonObject = jQuery.parseJSON( data );
-      if (callback) callback(null, data, the_year, num_albums);
+      if (callback) callback(null, data, the_year, begin_album, end_album);
     },
     error: function(data) {
       if (callback) callback(data);

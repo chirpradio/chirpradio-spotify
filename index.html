@@ -15,6 +15,7 @@
 	    @import url('sp://import/css/ui.css');    
 	    @import url('sp://import/css/list.css');    
 	</style>
+
 </head>
 <body style="background-color: #fff;">
 	<header>
@@ -41,13 +42,14 @@
 	<script src="libs/js/jquery-ui.min.js"></script>
 	<script src="libs/js/underscore.js"></script>
 	<script src="libs/js/transform.js"></script>
+	<script src="app/app.js"></script>
 
 	<script>	    
 	    var ChirpRadio = ChirpRadio || {};
 	
 		$(function() {
 			sp  = getSpotifyApi(1);
-			var a   = sp.require("app/app");
+			var a   = sp.require("app/app");			
 			ChirpRadio.app = a.App();
 			ChirpRadio.app.init();
 		});

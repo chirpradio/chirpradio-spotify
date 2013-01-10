@@ -1,11 +1,15 @@
-//forked from https://github.com/alexmic/mood-knobs
+sp  = getSpotifyApi(1);
+
 var spm = sp.require("app/spotify-metadata"),
     m   = sp.require('sp://import/scripts/api/models'),
     ui  = sp.require("sp://import/scripts/ui");
  views  = sp.require("sp://import/scripts/api/views");
 
 function showBestOf(the_year) {
+    var spm = sp.require("app/spotify-metadata");
     $(".page").hide();   // Hide all sections
+    $("."+the_year).show();  // Show current section
+    spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 1, 2);
 }
 
 //callback function when top albums are looked up
@@ -35,20 +39,24 @@ var onTopAlbumsLookupReturn = function(err, albums) {
     });
 }
 
-var onBestOfAlbumsLookupReturn = function(err, albums, year, num_albums) {
+var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_album) {
     $('#spinner').hide();
     $(document.body).css("background-color", "#ECEBE8")
 
     if ($("#best_of_"+year).hasClass("loaded") == false) {
-        elem = $("<div class='page best_of_overview'><h2>Best of "+ year +"</h2><section id='best_of_" + year + "'></section><a href='#'' onclick='showBestOf(" + year + ");' return false;'>See More</a></div>");   
-        
-        //TODO: add after top_recent section instead of end of body
-        $(document.body).append(elem);       
-
-        if(albums.top_albums.length > num_albums)
-            short_list = albums.top_albums[0..num_albums+1];
-        else
+        if(albums.top_albums.length > end_album) {
+            //short_list = albums.top_albums[0..num_albums+1];
+            short_list = albums.top_albums.slice(begin_album,end_album);
+            $("#best_of_"+year).addClass("started");            
+        }
+        else if(albums.top_albums.length == end_album) {
+            short_list = albums.top_albums.slice(begin_album,end_album);
+            $("#best_of_"+year).addClass("loaded");
+        }
+        else {
             short_list = albums.top_albums;
+            $("#best_of_"+year).addClass("loaded");
+        } 
 
         short_list.forEach(function (top_album) {
             data=new Object();
@@ -60,9 +68,7 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, num_albums) {
             album = new Album(data);
             album.draw(0);
         });
-    }
-
-    $("#best_of_"+year).addClass("loaded")
+    }    
 }
 
 m.application.observe(m.EVENT.ARGUMENTSCHANGED, switchTabs);
@@ -73,9 +79,18 @@ function switchTabs() {
     $(".page").hide();   // Hide all sections
     $("."+args[0]).show();  // Show current section
 
-    for (the_year = 2009; the_year <= 2012; the_year++) {
-    //for (the_year = 2012; the_year >= 2009; the_year--) {
-        spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 5);
+    if(args[0] == 'best_of') {
+        for (the_year = 2009; the_year <= 2012; the_year++) {
+            //for (the_year = 2012; the_year >= 2009; the_year--) {
+            if ($("#best_of_"+the_year).hasClass("started") == false) {
+                $('#spinner').show();
+                $(document.body).css("background-color", "#ECEBE8")
+                elem = $("<div class='page best_of " + the_year + "'><h2>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><a href='#'' onclick='showBestOf(" + the_year + ");' return false;'>See More</a></div>");
+                //TODO: add after top_recent section instead of end of body
+                $(document.body).append(elem);                 
+                spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 0, 1);
+            }
+        }
     }
 };
 
