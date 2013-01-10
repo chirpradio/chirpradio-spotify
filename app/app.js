@@ -83,6 +83,7 @@ function switchTabs() {
         for (the_year = 2009; the_year <= 2012; the_year++) {
             //for (the_year = 2012; the_year >= 2009; the_year--) {
             if ($("#best_of_"+the_year).hasClass("started") == false) {
+                $("#best_of_"+the_year).addClass("started");            
                 $('#spinner').show();
                 $(document.body).css("background-color", "#ECEBE8")
                 elem = $("<div class='page best_of " + the_year + "'><h2>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><a href='#'' onclick='showBestOf(" + the_year + ");' return false;'>See More</a></div>");

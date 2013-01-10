@@ -49,7 +49,8 @@ exports.getTopAlbums = function (callback) {
   });
 }
 
-exports.getBestOf = function (callback, the_year, begin_album, end_album) {
+exports.getBestOf = function (callback, the_year, track_num_begin, track_num_end) {
+  console.log("getBestOf called: " + the_year + " track_num_begin=" + track_num_begin + " track_num_end="  + track_num_end);
   $.ajax({
     async: true,
     url: 'best_of_2012.json',
@@ -57,7 +58,7 @@ exports.getBestOf = function (callback, the_year, begin_album, end_album) {
     dataType: "json",
     success: function(data) {
       //jsonObject = jQuery.parseJSON( data );
-      if (callback) callback(null, data, the_year, begin_album, end_album);
+      if (callback) callback(null, data, the_year, track_num_begin, track_num_end);
     },
     error: function(data) {
       if (callback) callback(data);
