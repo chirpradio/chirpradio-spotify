@@ -94,7 +94,7 @@ exports.searchForAlbum = function (artist, album, callback) {
     },
   });
 
-  // this is async way to fetch the album info:
+  // this is the getJSON way to fetch the album info:
   // $.getJSON('http://ws.spotify.com/search/1/album.json?' + q)
   //     .success(function (data) {
   //       var albums = [];

@@ -9,7 +9,10 @@ function showBestOf(the_year) {
     var spm = sp.require("app/spotify-metadata");
     $(".page").hide();   // Hide all sections
     $("."+the_year).show();  // Show current section
-    spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 1, 2);
+    $(".more").show();   // Hide the rest of the albums
+
+    if ($("#best_of_"+the_year).hasClass("loaded") == false)
+        spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 1, 2);
 }
 
 //callback function when top albums are looked up
@@ -42,6 +45,7 @@ var onTopAlbumsLookupReturn = function(err, albums) {
 var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_album) {
     $('#spinner').hide();
     $(document.body).css("background-color", "#ECEBE8")
+    var more = false;
 
     if ($("#best_of_"+year).hasClass("loaded") == false) {
         if(albums.top_albums.length > end_album) {
@@ -52,6 +56,7 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_al
         else if(albums.top_albums.length == end_album) {
             short_list = albums.top_albums.slice(begin_album,end_album);
             $("#best_of_"+year).addClass("loaded");
+            more = true;
         }
         else {
             short_list = albums.top_albums;
@@ -65,25 +70,26 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_al
             data.description = top_album.description;
             data.artist_id=0;
             data.container_id = "best_of_" + year;       
+            if (more == true)
+                data.more = true;
             album = new Album(data);
             album.draw(0);
         });
     }    
 }
 
-m.application.observe(m.EVENT.ARGUMENTSCHANGED, switchTabs);
-
 function switchTabs() {
     var args = m.application.arguments;
     console.log(args);
     $(".page").hide();   // Hide all sections
     $("."+args[0]).show();  // Show current section
+    $(".more").hide();   // Hide the rest of the albums
 
     if(args[0] == 'best_of') {
+
         for (the_year = 2009; the_year <= 2012; the_year++) {
             //for (the_year = 2012; the_year >= 2009; the_year--) {
             if ($("#best_of_"+the_year).hasClass("started") == false) {
-                $("#best_of_"+the_year).addClass("started");            
                 $('#spinner').show();
                 $(document.body).css("background-color", "#ECEBE8")
                 elem = $("<div class='page best_of " + the_year + "'><h2>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><a href='#'' onclick='showBestOf(" + the_year + ");' return false;'>See More</a></div>");
@@ -101,6 +107,7 @@ var Album = function(data)
         artist   = data.artist_name,
         description = data.description,
         container_id = data.container_id,
+        more     = data.more,
         artistId = data.artist_id, 
         top      = 0,
         album    = null,
@@ -170,6 +177,10 @@ var Album = function(data)
             $(elem).prepend(player.node);
             $("#"+container_id).append(elem);
 
+            if (more == true)
+                $(elem).addClass("more");
+          
+
         } else {
             console.log('The album "' + artist + ' - ' + album_name + '" was not found by Spotify album search API.');
         }
@@ -207,6 +218,7 @@ var App = function()
     return {
         init: function()
         {
+            m.application.observe(m.EVENT.ARGUMENTSCHANGED, switchTabs);
             //spm.getTopAlbumsNoJQuery(onTopAlbumsLookupReturn);
             spm.getTopAlbums(onTopAlbumsLookupReturn);
             return this;
