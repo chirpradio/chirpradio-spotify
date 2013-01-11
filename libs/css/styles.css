@@ -38,7 +38,7 @@ header nav ol { display: block !important; padding: 2px 0 0 80px; min-height: 65
 .tracks .more:hover { background: rgba(255, 255, 255, 0.9); }
 
 
-.track { overflow: hidden; padding: 10px 10px; width:170px; height:220px; background-color: #fff; margin: 10px; display: inline; float: left; position:relative; }
+.track { overflow: hidden; padding: 10px 10px; width:170px; height:320px; background-color: #fff; margin: 10px; display: inline; float: left; position:relative; }
 
 /* Depricated? -- .track p { font-size: 1.4em; line-height: 1.2; overflow: hidden; margin-top: 7px; margin-bottom: 7px;}*/
 

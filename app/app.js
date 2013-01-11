@@ -10,11 +10,19 @@ function seeMoreAlbumsOfTheYearOnClick(the_year) {
     var spm = sp.require("app/spotify-metadata");
     $(".page").hide();   // Hide all sections
     $("."+the_year).show();  // Show current section
-    $(".more").show();   // Hide the rest of the albums
+    $(".more").show();   
     $(".see_more").hide();  
 
     if ($("#best_of_"+the_year).hasClass("loaded") == false)
         spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 1, 2);
+}
+
+function readMoreOnClick(the_year, description) {
+    $(".page").hide();   // Hide all sections
+    $("."+the_year).show();  // Show current section
+    $(".see_more").hide();  
+    $(".read_more").hide();  
+    $(".best_of_header").hide();
 }
 
 //callback function when top albums are looked up
@@ -71,7 +79,8 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_al
             data.artist_name = top_album.artist;
             data.description = top_album.description;
             data.artist_id=0;
-            data.container_id = "best_of_" + year;       
+            data.container_id = "best_of_" + year;     
+            data.year =  year;  
             if (more == true)
                 data.more = true;
             album = new Album(data);
@@ -87,7 +96,8 @@ function switchTabs() {
     $("."+args[0]).show();  // Show current section
     $(".see_more").show();
     $(".more").hide();   // Hide the rest of the albums
-  
+    $(".read_more").show();      
+    $(".best_of_header").show();    
 
     if(args[0] == 'best_of') {
 
@@ -96,7 +106,7 @@ function switchTabs() {
             if ($("#best_of_"+the_year).hasClass("started") == false) {
                 $('#spinner').show();
                 $(document.body).css("background-color", "#ECEBE8")
-                elem = $("<div class='page best_of " + the_year + "'><h2>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><a href='#'' onclick='showBestOf(" + the_year + ");' return false;'>See More</a></div>");
+                elem = $("<div class='page best_of " + the_year + "'><h2 class='best_of_header'>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><a href='#' class='see_more' onclick='seeMoreAlbumsOfTheYearOnClick(" + the_year + ");'>See More</a></div>");
                 //TODO: add after top_recent section instead of end of body
                 $(document.body).append(elem);                 
                 spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 0, 1);
@@ -112,7 +122,8 @@ var Album = function(data)
         description = data.description,
         container_id = data.container_id,
         more     = data.more,
-        artistId = data.artist_id, 
+        artistId = data.artist_id,
+        year     = data.year, 
         top      = 0,
         album    = null,
         id       = null,
@@ -125,7 +136,7 @@ var Album = function(data)
                         //<span class="label">(Island)</span> 
                     "</p>" +
                     "<button id='savePlaylist' class='add-playlist sp-button sp-icon'> <span class='sp-plus'></span>Add as Playlist</button>" +
-                    (description ? "<a href='#' class='read_more' onclick='seeMoreAlbumsOfTheYearOnClick(" + the_year + ");' return false;'>Read More</a>" : "") +                  
+                    (description ? "<a href='#' class='read_more' onclick='readMoreOnClick(" + year + ");'>Read More</a>" : "") +                  
                     "</article>");
         elemDiv  = $("<div style='display:block'>" +
                       "<div class='dets'>" + 
