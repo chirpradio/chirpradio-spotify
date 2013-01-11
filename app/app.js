@@ -10,6 +10,8 @@ function showBestOf(the_year) {
     $(".page").hide();   // Hide all sections
     $("."+the_year).show();  // Show current section
     $(".more").show();   // Hide the rest of the albums
+    $(".see_more").hide();  
+
 
     if ($("#best_of_"+the_year).hasClass("loaded") == false)
         spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 1, 2);
@@ -83,7 +85,9 @@ function switchTabs() {
     console.log(args);
     $(".page").hide();   // Hide all sections
     $("."+args[0]).show();  // Show current section
+    $(".see_more").show();
     $(".more").hide();   // Hide the rest of the albums
+  
 
     if(args[0] == 'best_of') {
 
