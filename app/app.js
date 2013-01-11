@@ -5,13 +5,13 @@ var spm = sp.require("app/spotify-metadata"),
     ui  = sp.require("sp://import/scripts/ui");
  views  = sp.require("sp://import/scripts/api/views");
 
-function showBestOf(the_year) {
+function seeMoreAlbumsOfTheYearOnClick(the_year) {
+    //window.location = sp:app:chirp:arguments;
     var spm = sp.require("app/spotify-metadata");
     $(".page").hide();   // Hide all sections
     $("."+the_year).show();  // Show current section
     $(".more").show();   // Hide the rest of the albums
     $(".see_more").hide();  
-
 
     if ($("#best_of_"+the_year).hasClass("loaded") == false)
         spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 1, 2);
@@ -125,6 +125,7 @@ var Album = function(data)
                         //<span class="label">(Island)</span> 
                     "</p>" +
                     "<button id='savePlaylist' class='add-playlist sp-button sp-icon'> <span class='sp-plus'></span>Add as Playlist</button>" +
+                    (description ? "<a href='#' class='read_more' onclick='seeMoreAlbumsOfTheYearOnClick(" + the_year + ");' return false;'>Read More</a>" : "") +                  
                     "</article>");
         elemDiv  = $("<div style='display:block'>" +
                       "<div class='dets'>" + 
