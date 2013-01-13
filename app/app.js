@@ -27,7 +27,8 @@ function readMoreOnClick(id, description) {
     $(".see_more").hide();  
     $(".read_more").hide();
     $(".best_of_header").hide();
-    $("#"+id + " p span").text(description);
+    $("#"+id + " p .description_long").show();
+    $("#"+id + " p .description").hide();    
     $("#"+id).addClass("verbose");  
 }
 
@@ -49,9 +50,10 @@ var onTopAlbumsLookupReturn = function(err, albums) {
     
     albums.this_week.releases.forEach(function (top_album) {
         data=new Object();
-        data.title = top_album.release
-        data.artist_name = top_album.artist
+        data.title = top_album.release;
+        data.artist_name = top_album.artist;
         data.artist_id=0;
+        data.label = top_album.label;
         data.container_id = "top_recent_albums"
         album = new Album(data);
         album.draw(0);
@@ -87,6 +89,7 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_al
             data.artist_id=0;
             data.container_id = "best_of_" + year;     
             data.year =  year;  
+            data.label = top_album.label;
             if (more == true)
                 data.more = true;
             album = new Album(data);
@@ -103,12 +106,14 @@ function switchTabs() {
     $(".see_more").show();
     $(".best_of section article").show();
     $(".best_of section article").removeClass('verbose');      
+    $(".best_of section article p .description_long").hide();
+    $(".best_of section article p .description").show();   
     $(".more").hide();   // Hide the rest of the albums
     $(".read_more").show();      
     $(".best_of_header").show();  
+   
 
     if(args[0] == 'best_of') {
-
         for (the_year = 2009; the_year <= 2012; the_year++) {
             //for (the_year = 2012; the_year >= 2009; the_year--) {
             if ($("#best_of_"+the_year).hasClass("started") == false) {
@@ -131,7 +136,8 @@ var Album = function(data)
         container_id = data.container_id,
         more     = data.more,
         artistId = data.artist_id,
-        year     = data.year, 
+        year     = data.year,
+        label    = data.label, 
         top      = 0,
         album    = null,
         id       = null,
@@ -140,8 +146,10 @@ var Album = function(data)
                    "<p>" +
                         "<strong class='artist'>" + artist + "</strong>" +
                         //"<span class='song'>" + title + "</span> from" + 
-                        "<em class='album'>" + title + "</em>" + 
+                        "<em class='album'>" + title + "</em>" +
+                        "<span class='label'>" + (label ? "Label: " + label : "") + "</span><br>" +
                         "<span class='description'>" + (description ? description.substring(0, 50)+"..." : "") + "</span>" +
+                        "<span class='description_long' style='display:none;'>" + (description ? description : "") + "</span>" +                        
                         //<span class="label">(Island)</span> 
                     "</p>" +
                     "<button id='savePlaylist' class='add-playlist sp-button sp-icon'> <span class='sp-plus'></span>Add as Playlist</button>" +                
