@@ -5,7 +5,14 @@
 /* Colors */
 /* Color Usage */
 
-body { background-color: #ffffff;}
+body { 
+ background-attachment: fixed, fixed;
+    background-color: #EAEAEA;
+    background-image: url("../img/rings.png"), url("../img/paper-trans.png");
+    background-position: -200px -150px, 50% top;
+    background-repeat: no-repeat, repeat;
+
+}
 
 .home { display: inline; float: left; background: url(CHIRPradio.png) no-repeat; background-size:220px 50px; width: 230px; height: 50px; margin-right: 10px; overflow: hidden;}
 
@@ -38,7 +45,29 @@ header nav ol { display: block !important; padding: 2px 0 0 80px; min-height: 65
 .tracks .more:hover { background: rgba(255, 255, 255, 0.9); }
 
 
-.track { overflow: hidden; padding: 10px 10px; width:170px; height:260px; background-color: #fff; margin: 10px;  float: left; position:relative; }
+/*.track { overflow: hidden; padding: 10px 10px; width:170px; height:260px; background-color: #fff; margin: 10px;  float: left; position:relative; }*/
+
+
+.track { 
+
+
+overflow: hidden; 
+width:160px;  
+width:260px;  
+float: left; 
+position:relative;
+
+    -moz-box-sizing: border-box;
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) inset;
+    display: block;
+    margin: 0 5px 10px;
+    padding: 20px;
+
+}
+
+
 
 /* Depricated? -- .track p { font-size: 1.4em; line-height: 1.2; overflow: hidden; margin-top: 7px; margin-bottom: 7px;}*/
 
@@ -60,8 +89,17 @@ header nav ol { display: block !important; padding: 2px 0 0 80px; min-height: 65
 
 .sp-player{
   margin: 0 auto;
-  width: 171px !important;
-  height: 171px !important;
+  width: 161px !important;
+  height: 161px !important;
+}
+
+/*-----  Recent Top Albums Styles -----*/
+
+/*-----  Albums of the Year Styles -----*/
+
+.best_of .track{
+  float: none;
+
 }
 
 
