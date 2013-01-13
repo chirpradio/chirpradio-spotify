@@ -22,14 +22,16 @@ function seeMoreAlbumsOfTheYearOnClick(the_year) {
 
 function readMoreOnClick(id, description) {
     $(".page").hide();   // Hide all sections
-    $("#"+id).show();  // Show current section
+    $(".best_of section article").not("#"+id.toString()).hide();
+    $(".best_of").show();
     $(".see_more").hide();  
-    $(".read_more").hide();  
+    $(".read_more").hide();
     $(".best_of_header").hide();
+    $("#"+id + " p span").text(description);
 }
 
 //callback function when top albums are looked up
-var onTopAlbumsLookupReturnFile = function(err, albums) {
+var onTopAlbumsLookupReturnFile = function(err, albums) {id
     albums.top_albums.forEach(function (top_album) {
         data=new Object();
         data.title = top_album.release
@@ -135,7 +137,8 @@ var Album = function(data)
                    "<p>" +
                         "<strong class='artist'>" + artist + "</strong>" +
                         //"<span class='song'>" + title + "</span> from" + 
-                        "<em class='album'>" + title + "</em>" + (description ? description.substring(0, 50)+"..." : "") +
+                        "<em class='album'>" + title + "</em>" + 
+                        "<span class='description'>" + (description ? description.substring(0, 50)+"..." : "") + "</span>" +
                         //<span class="label">(Island)</span> 
                     "</p>" +
                     "<button id='savePlaylist' class='add-playlist sp-button sp-icon'> <span class='sp-plus'></span>Add as Playlist</button>" +                
@@ -194,12 +197,22 @@ var Album = function(data)
 
             $(elem).prepend(player.node);
             $("#"+container_id).append(elem);
-            $(elem).append((description ? "<a href='#' class='read_more' onclick='readMoreOnClick(" + id + ");'>Read More</a>" : ""));
+
+            var link = document.createElement('a');
+            link.href = "#"; 
+            link.appendChild(document.createTextNode('Read More'));
+            link.setAttribute('class', 'read_more');
+
+            link.addEventListener("click", 
+                function (event) {
+                    event.preventDefault();
+                    readMoreOnClick(id, description);                
+                }, 
+                false);
+            $(elem).append(link);
 
             if (more == true)
-                $(elem).addClass("more");
-          
-
+                $(elem).addClass("more");          
         } else {
             console.log('The album "' + artist + ' - ' + album_name + '" was not found by Spotify album search API.');
         }
