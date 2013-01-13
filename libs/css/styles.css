@@ -97,10 +97,29 @@ position:relative;
 
 /*-----  Albums of the Year Styles -----*/
 
+.best_of{
+  padding-left:20px;
+  height: auto;
+  margin: 0 0 40px 0;
+  clear: both;
+}
+
 .best_of .track{
-  float: none;
+  float: left;
+  height: 310px;
 
 }
+
+a.see_more{
+  display: block;
+  clear: both;
+  color: #822036;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  left: 10px;
+}
+
 
 
 /*-----  START MEDIA QUERIES -----*/
@@ -110,54 +129,36 @@ position:relative;
     width:auto;
   }
   .track{
-    margin: 10px auto 20px;
+    margin: 20px auto 20px;
     float: none;
   }
-	.track p { 
-		font-size: 1.5em; 
-		line-height: 1.3; 
-	} 
  }
 
 
-@media (min-width: 434px) and (max-width: 630px) { 
+@media (min-width: 434px) and (max-width: 663px) { 
 
   .tracks { 
-    width:430px;
+    width:440px;
     margin: 20px auto;
   }
-  .track{
-    margin: 10px;
-  }
-	.track p { 
-		font-size: 1.5em; 
-		line-height: 1.3; 
-	} 
  }
 
 
-@media (min-width: 630px) and (max-width: 768px) { 
+@media (min-width: 663px) and (max-width: 768px) { 
 	.track {  
 		width:170px; /*was: width: 130px -AS*/ 
-		border-top: none; padding-top: 10px;
+		border-top: none;
 	}
 	.tracks { 
     margin: 20px auto;
-    width:640px;
+    width:663px;
 	}
-	.track p { s
-		font-size: 1.1em; 
-	} 
 }
 
 
 @media (min-width: 768px) and (max-width: 1089px) {
 	.track {  
-		width:170px; /*was: width: 140px -AS*/  
-		padding: 10px 15px; 
-	}
-	.track p { 
-		font-size: 1.4em; 
+		width:170px; /*was: width: 140px -AS*/
 	}
 	.tracks { 
     margin: 20px auto;
