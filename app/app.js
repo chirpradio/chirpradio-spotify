@@ -28,6 +28,7 @@ function readMoreOnClick(id, description) {
     $(".read_more").hide();
     $(".best_of_header").hide();
     $("#"+id + " p span").text(description);
+    $("#"+id).addClass("verbose");  
 }
 
 //callback function when top albums are looked up
@@ -100,9 +101,11 @@ function switchTabs() {
     $(".page").hide();   // Hide all sections
     $("."+args[0]).show();  // Show current section
     $(".see_more").show();
+    $(".best_of section article").show();
+    $(".best_of section article").removeClass('verbose');      
     $(".more").hide();   // Hide the rest of the albums
     $(".read_more").show();      
-    $(".best_of_header").show();    
+    $(".best_of_header").show();  
 
     if(args[0] == 'best_of') {
 
