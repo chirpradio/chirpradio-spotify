@@ -20,7 +20,7 @@ function seeMoreAlbumsOfTheYearOnClick(the_year) {
         spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, BEST_OF_OVERVIEW_NUM_ALBUMS, BEST_OF_OVERVIEW_TOTAL_ALBUMS);
 }
 
-function readMoreOnClick(id, description) {
+function readMoreOnClick(id) {
     $(".page").hide();   // Hide all sections
     $(".best_of section article").not("#"+id.toString()).hide();
     $(".best_of").show();
@@ -218,7 +218,7 @@ var Album = function(data)
                 link.addEventListener("click", 
                     function (event) {
                         event.preventDefault();
-                        readMoreOnClick(id, description);                
+                        readMoreOnClick(id);                
                     }, 
                     false);
                 $(elem).append(link);
