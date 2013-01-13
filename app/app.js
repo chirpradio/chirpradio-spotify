@@ -50,9 +50,10 @@ var onTopAlbumsLookupReturn = function(err, albums) {
     
     albums.this_week.releases.forEach(function (top_album) {
         data=new Object();
-        data.title = top_album.release
-        data.artist_name = top_album.artist
+        data.title = top_album.release;
+        data.artist_name = top_album.artist;
         data.artist_id=0;
+        data.label = top_album.label;
         data.container_id = "top_recent_albums"
         album = new Album(data);
         album.draw(0);
@@ -88,6 +89,7 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_al
             data.artist_id=0;
             data.container_id = "best_of_" + year;     
             data.year =  year;  
+            data.label = top_album.label;
             if (more == true)
                 data.more = true;
             album = new Album(data);
@@ -134,7 +136,8 @@ var Album = function(data)
         container_id = data.container_id,
         more     = data.more,
         artistId = data.artist_id,
-        year     = data.year, 
+        year     = data.year,
+        label    = data.label, 
         top      = 0,
         album    = null,
         id       = null,
@@ -143,7 +146,8 @@ var Album = function(data)
                    "<p>" +
                         "<strong class='artist'>" + artist + "</strong>" +
                         //"<span class='song'>" + title + "</span> from" + 
-                        "<em class='album'>" + title + "</em>" + 
+                        "<em class='album'>" + title + "</em>" +
+                        "<span class='label'>" + (label ? "Label: " + label : "") + "</span><br>" +
                         "<span class='description'>" + (description ? description.substring(0, 50)+"..." : "") + "</span>" +
                         "<span class='description_long' style='display:none;'>" + (description ? description : "") + "</span>" +                        
                         //<span class="label">(Island)</span> 
