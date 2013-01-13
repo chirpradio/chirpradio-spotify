@@ -27,7 +27,8 @@ function readMoreOnClick(id, description) {
     $(".see_more").hide();  
     $(".read_more").hide();
     $(".best_of_header").hide();
-    $("#"+id + " p span").text(description);
+    $("#"+id + " p .description_long").show();
+    $("#"+id + " p .description").hide();    
     $("#"+id).addClass("verbose");  
 }
 
@@ -103,12 +104,14 @@ function switchTabs() {
     $(".see_more").show();
     $(".best_of section article").show();
     $(".best_of section article").removeClass('verbose');      
+    $(".best_of section article p .description_long").hide();
+    $(".best_of section article p .description").show();   
     $(".more").hide();   // Hide the rest of the albums
     $(".read_more").show();      
     $(".best_of_header").show();  
+   
 
     if(args[0] == 'best_of') {
-
         for (the_year = 2009; the_year <= 2012; the_year++) {
             //for (the_year = 2012; the_year >= 2009; the_year--) {
             if ($("#best_of_"+the_year).hasClass("started") == false) {
@@ -142,6 +145,7 @@ var Album = function(data)
                         //"<span class='song'>" + title + "</span> from" + 
                         "<em class='album'>" + title + "</em>" + 
                         "<span class='description'>" + (description ? description.substring(0, 50)+"..." : "") + "</span>" +
+                        "<span class='description_long' style='display:none;'>" + (description ? description : "") + "</span>" +                        
                         //<span class="label">(Island)</span> 
                     "</p>" +
                     "<button id='savePlaylist' class='add-playlist sp-button sp-icon'> <span class='sp-plus'></span>Add as Playlist</button>" +                
