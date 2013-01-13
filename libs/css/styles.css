@@ -99,7 +99,7 @@ position:relative;
 
 .best_of{
   padding-left:20px;
-  height: auto;
+  min-height: 420px;
   margin: 0 0 40px 0;
   clear: both;
 }
