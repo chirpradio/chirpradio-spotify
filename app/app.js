@@ -201,18 +201,20 @@ var Album = function(data)
             $(elem).prepend(player.node);
             $("#"+container_id).append(elem);
 
-            var link = document.createElement('a');
-            link.href = "#"; 
-            link.appendChild(document.createTextNode('Read More'));
-            link.setAttribute('class', 'read_more');
+            if (description) {
+                var link = document.createElement('a');
+                link.href = "#"; 
+                link.appendChild(document.createTextNode('Read More'));
+                link.setAttribute('class', 'read_more');
 
-            link.addEventListener("click", 
-                function (event) {
-                    event.preventDefault();
-                    readMoreOnClick(id, description);                
-                }, 
-                false);
-            $(elem).append(link);
+                link.addEventListener("click", 
+                    function (event) {
+                        event.preventDefault();
+                        readMoreOnClick(id, description);                
+                    }, 
+                    false);
+                $(elem).append(link);
+            }
 
             if (more == true)
                 $(elem).addClass("more");          
