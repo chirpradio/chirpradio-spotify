@@ -7,6 +7,7 @@ var spm = sp.require("app/spotify-metadata"),
 
 var BEST_OF_OVERVIEW_NUM_ALBUMS = 4;
 var BEST_OF_OVERVIEW_TOTAL_ALBUMS = 25;
+
 function seeMoreAlbumsOfTheYearOnClick(the_year) {
     //window.location = sp:app:chirp:arguments;
     var spm = sp.require("app/spotify-metadata");
@@ -19,9 +20,9 @@ function seeMoreAlbumsOfTheYearOnClick(the_year) {
         spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, BEST_OF_OVERVIEW_NUM_ALBUMS, BEST_OF_OVERVIEW_TOTAL_ALBUMS);
 }
 
-function readMoreOnClick(the_year, description) {
+function readMoreOnClick(id, description) {
     $(".page").hide();   // Hide all sections
-    $("."+the_year).show();  // Show current section
+    $("#"+id).show();  // Show current section
     $(".see_more").hide();  
     $(".read_more").hide();  
     $(".best_of_header").hide();
@@ -137,8 +138,7 @@ var Album = function(data)
                         "<em class='album'>" + title + "</em>" + (description ? description.substring(0, 50)+"..." : "") +
                         //<span class="label">(Island)</span> 
                     "</p>" +
-                    "<button id='savePlaylist' class='add-playlist sp-button sp-icon'> <span class='sp-plus'></span>Add as Playlist</button>" +
-                    (description ? "<a href='#' class='read_more' onclick='readMoreOnClick(" + year + ");'>Read More</a>" : "") +                  
+                    "<button id='savePlaylist' class='add-playlist sp-button sp-icon'> <span class='sp-plus'></span>Add as Playlist</button>" +                
                     "</article>");
         elemDiv  = $("<div style='display:block'>" +
                       "<div class='dets'>" + 
@@ -194,6 +194,7 @@ var Album = function(data)
 
             $(elem).prepend(player.node);
             $("#"+container_id).append(elem);
+            $(elem).append((description ? "<a href='#' class='read_more' onclick='readMoreOnClick(" + id + ");'>Read More</a>" : ""));
 
             if (more == true)
                 $(elem).addClass("more");
