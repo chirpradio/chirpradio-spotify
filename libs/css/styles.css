@@ -135,6 +135,18 @@ a.see_more{
  }
 
 
+
+.verbose{
+width: 800px;
+}
+.verbose .sp-player{
+float: left;
+}
+.verbose p{
+float: right;
+width: 200px;
+}
+
 @media (min-width: 434px) and (max-width: 663px) { 
 
   .tracks { 
