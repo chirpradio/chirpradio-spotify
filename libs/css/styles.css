@@ -53,7 +53,7 @@ header nav ol { display: block !important; padding: 2px 0 0 80px; min-height: 65
 
 overflow: hidden; 
 width:160px;  
-width:260px;  
+height:260px;  
 float: left; 
 position:relative;
 
