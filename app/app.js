@@ -5,6 +5,8 @@ var spm = sp.require("app/spotify-metadata"),
     ui  = sp.require("sp://import/scripts/ui");
  views  = sp.require("sp://import/scripts/api/views");
 
+var BEST_OF_OVERVIEW_NUM_ALBUMS = 4;
+var BEST_OF_OVERVIEW_TOTAL_ALBUMS = 25;
 function seeMoreAlbumsOfTheYearOnClick(the_year) {
     //window.location = sp:app:chirp:arguments;
     var spm = sp.require("app/spotify-metadata");
@@ -14,7 +16,7 @@ function seeMoreAlbumsOfTheYearOnClick(the_year) {
     $(".see_more").hide();  
 
     if ($("#best_of_"+the_year).hasClass("loaded") == false)
-        spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 1, 2);
+        spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, BEST_OF_OVERVIEW_NUM_ALBUMS, BEST_OF_OVERVIEW_TOTAL_ALBUMS);
 }
 
 function readMoreOnClick(the_year, description) {
@@ -63,7 +65,7 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_al
             short_list = albums.top_albums.slice(begin_album,end_album);
             $("#best_of_"+year).addClass("started");            
         }
-        else if(albums.top_albums.length == end_album) {
+        else if($("#best_of_"+year).hasClass("started") == true) {
             short_list = albums.top_albums.slice(begin_album,end_album);
             $("#best_of_"+year).addClass("loaded");
             more = true;
@@ -109,7 +111,7 @@ function switchTabs() {
                 elem = $("<div class='page best_of " + the_year + "'><h2 class='best_of_header'>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><a href='#' class='see_more' onclick='seeMoreAlbumsOfTheYearOnClick(" + the_year + ");'>See More</a></div>");
                 //TODO: add after top_recent section instead of end of body
                 $(document.body).append(elem);                 
-                spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 0, 1);
+                spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 0, BEST_OF_OVERVIEW_NUM_ALBUMS);
             }
         }
     }
