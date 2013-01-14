@@ -66,15 +66,15 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_al
     var more = false;
 
     if ($("#best_of_"+year).hasClass("loaded") == false) {
-        if(albums.top_albums.length > end_album) {
+        if($("#best_of_"+year).hasClass("started") == true) {
             //short_list = albums.top_albums[0..num_albums+1];
-            short_list = albums.top_albums.slice(begin_album,end_album);
-            $("#best_of_"+year).addClass("started");            
-        }
-        else if($("#best_of_"+year).hasClass("started") == true) {
             short_list = albums.top_albums.slice(begin_album,end_album);
             $("#best_of_"+year).addClass("loaded");
             more = true;
+        }
+        else if(albums.top_albums.length > end_album) {
+            short_list = albums.top_albums.slice(begin_album,end_album);
+            $("#best_of_"+year).addClass("started");
         }
         else {
             short_list = albums.top_albums;
