@@ -17,6 +17,7 @@
 1. In the Spotify app, click `Developer > Show Inspector` (it's the same inspector as Chrome's)
 
 ** Best of Links**
+
 1. http://v2.chirpradio.org/blog/chirp-radios-top-25-albums-of-2012
 1. http://v2.chirpradio.org/blog/chirp-radio-best-of-2011
 1. http://v2.chirpradio.org/blog/chirp-radios-best-of-2010
