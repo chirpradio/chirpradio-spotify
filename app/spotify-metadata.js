@@ -53,8 +53,7 @@ exports.getBestOf = function (callback, the_year, track_num_begin, track_num_end
   //console.log("getBestOf called: " + the_year + " track_num_begin=" + track_num_begin + " track_num_end="  + track_num_end);
   $.ajax({
     async: true,
-    url: 'best_of_2012.json',
-    //url: 'best_of_' + the_year + '.json',
+    url: 'best_of_' + the_year + '.json',
     dataType: "json",
     success: function(data) {
       //jsonObject = jQuery.parseJSON( data );
