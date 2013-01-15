@@ -15,7 +15,7 @@ function seeMoreAlbumsOfTheYearOnClick(the_year) {
     $("."+the_year).show();  // Show current section
     $(".more").show();   
     $(".see_more").hide();  
-
+  
     if ($("#best_of_"+the_year).hasClass("loaded") == false)
         spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, BEST_OF_OVERVIEW_NUM_ALBUMS, BEST_OF_OVERVIEW_TOTAL_ALBUMS);
 }
@@ -45,6 +45,7 @@ var onTopAlbumsLookupReturnFile = function(err, albums) {id
 }
 
 var onTopAlbumsLookupReturn = function(err, albums) {
+    console.log("Looking up top recent albums")
     $('#spinner').hide();
     $(document.body).css("background-color", "#ECEBE8")
     
@@ -100,7 +101,6 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_al
 
 function switchTabs() {
     var args = m.application.arguments;
-    console.log(args);
     $(".page").hide();   // Hide all sections
     $("."+args[0]).show();  // Show current section
     $(".see_more").show();
@@ -112,8 +112,8 @@ function switchTabs() {
     $(".read_more").show();      
     $(".best_of_header").show();  
    
-
     if(args[0] == 'best_of') {
+        console.log("Looking up Best albums of the year Overview");
         for (the_year = 2009; the_year <= 2012; the_year++) {
             //for (the_year = 2012; the_year >= 2009; the_year--) {
             if ($("#best_of_"+the_year).hasClass("started") == false) {
