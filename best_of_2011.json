@@ -13,12 +13,6 @@
       "description": "This album is beautiful in its quiet grace, and the honesty of its lyrics. Even 9 months after its release these songs still get happily stuck in my head. —Liz Smyth"
     },
     {
-      "artist": "Detroyer",
-      "label": "Merge",
-      "release": "Kaputt",
-      "description": "I haven’t listened to any other album this year more than Kaputt. I am infatuated with every track here. I guess artistic audacity just gets me every time. I want to hear someone giving a crazy idea his all, even if that could potentially mean utter failure. Dan Bejar could’ve made the worst decision of his life by releasing Kaputt, but as long as listeners like me are around, we’ll make sure this isn’t the last time an artist doesn’t play it safe. Kaputt is my favorite album of the year. —Dylan Peterson"
-    },
-    {
       "artist": "The Joy Formidable",
       "label": "Atlantic/Canvasback",
       "release": "The Big Roar",
@@ -29,6 +23,12 @@
       "label": "Secretly Canadian",
       "release": "Slave Ambient",
       "description": "Springsteen, Dylan, Petty are the common comparisons…but with a hypnotic bend. Roadtrip music that makes you drive faster…be safe, use cruise control instead. —David Staples"
+    },
+    {
+      "artist": "Detroyer",
+      "label": "Merge",
+      "release": "Kaputt",
+      "description": "I haven’t listened to any other album this year more than Kaputt. I am infatuated with every track here. I guess artistic audacity just gets me every time. I want to hear someone giving a crazy idea his all, even if that could potentially mean utter failure. Dan Bejar could’ve made the worst decision of his life by releasing Kaputt, but as long as listeners like me are around, we’ll make sure this isn’t the last time an artist doesn’t play it safe. Kaputt is my favorite album of the year. —Dylan Peterson"
     },
     {
       "artist": "The Weeknd",
