@@ -45,9 +45,9 @@ var onTopAlbumsLookupReturnFile = function(err, albums) {id
 }
 
 var onTopAlbumsLookupReturn = function(err, albums) {
-    console.log("Looking up top recent albums")
+    console.log("Looking up top recent albums");
     $('#spinner').hide();
-    $(document.body).css("background-color", "#ECEBE8")
+    $(document.body).css("background-color", "#ECEBE8");
     
     albums.this_week.releases.forEach(function (top_album) {
         data=new Object();
@@ -101,6 +101,7 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_al
 
 function switchTabs() {
     var args = m.application.arguments;
+    console.log("Calling switchTabs with args[0]: " + args[0]);
     $(".page").hide();   // Hide all sections
     $("."+args[0]).show();  // Show current section
     $(".see_more").show();
@@ -116,10 +117,11 @@ function switchTabs() {
         console.log("Looking up Best albums of the year Overview");
         for (the_year = 2009; the_year <= 2012; the_year++) {
             //for (the_year = 2012; the_year >= 2009; the_year--) {
+            console.log(the_year + " " + $("#best_of_"+the_year).attr());
             if ($("#best_of_"+the_year).hasClass("started") == false) {
                 $('#spinner').show();
                 $(document.body).css("background-color", "#ECEBE8")
-                elem = $("<div class='page best_of " + the_year + "'><h2 class='best_of_header'>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><a href='#' class='see_more' onclick='seeMoreAlbumsOfTheYearOnClick(" + the_year + ");'>See More</a></div>");
+                elem = $("<div class='page best_of " + the_year + "'><h2 class='best_of_header'>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><a href='spotify:app:chirp:best_of:index' class='see_more' onclick='seeMoreAlbumsOfTheYearOnClick(" + the_year + ");'>See More</a></div>");
                 //TODO: add after top_recent section instead of end of body
                 $(document.body).append(elem);                 
                 spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 0, BEST_OF_OVERVIEW_NUM_ALBUMS);
@@ -211,7 +213,7 @@ var Album = function(data)
 
             if (description) {
                 var link = document.createElement('a');
-                link.href = "#"; 
+                link.href = "spotify:app:chirp:best_of:index"; 
                 link.appendChild(document.createTextNode('Read More'));
                 link.setAttribute('class', 'read_more');
 
