@@ -21,6 +21,7 @@ function seeMoreAlbumsOfTheYearOnClick(the_year) {
 }
 
 function readMoreOnClick(id) {
+    console.log("readMoreOnClick entered");
     $(".page").hide();   // Hide all sections
     $(".best_of section article").not("#"+id.toString()).hide();
     $(".best_of").show();
@@ -99,32 +100,50 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_al
     }    
 }
 
-function switchTabs() {
-    var args = m.application.arguments;
-    console.log("Calling switchTabs with args[0]: " + args[0]);
-    $(".page").hide();   // Hide all sections
-    $("."+args[0]).show();  // Show current section
-    $(".see_more").show();
+function simpleAlbumView() {
+    $(".read_more").show();      
+    $(".best_of_header").show();  
     $(".best_of section article").show();
     $(".best_of section article").removeClass('verbose');      
     $(".best_of section article p .description_long").hide();
     $(".best_of section article p .description").show();   
-    $(".more").hide();   // Hide the rest of the albums
-    $(".read_more").show();      
-    $(".best_of_header").show();  
+}
+
+function eventHandler() {
+    var args = m.application.arguments;
+    console.log("Calling eventHandler with args: " + args);
+
+    $(".page").hide();   // Hide all sections
+    $("."+args[0]).show();  // Show current section
    
     if(args[0] == 'best_of') {
-        console.log("Looking up Best albums of the year Overview");
-        for (the_year = 2009; the_year <= 2012; the_year++) {
-            //for (the_year = 2012; the_year >= 2009; the_year--) {
-            console.log(the_year + " " + $("#best_of_"+the_year).attr());
-            if ($("#best_of_"+the_year).hasClass("started") == false) {
-                $('#spinner').show();
-                $(document.body).css("background-color", "#ECEBE8")
-                elem = $("<div class='page best_of " + the_year + "'><h2 class='best_of_header'>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><a href='spotify:app:chirp:best_of:index' class='see_more' onclick='seeMoreAlbumsOfTheYearOnClick(" + the_year + ");'>See More</a></div>");
-                //TODO: add after top_recent section instead of end of body
-                $(document.body).append(elem);                 
-                spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 0, BEST_OF_OVERVIEW_NUM_ALBUMS);
+        console.log("in the if block: args[1] = " + args[1] + ", args[2] = " + args[2]);
+        if(args[1] && args[1] == 'see_more') {
+            simpleAlbumView();
+            console.log("see_more block entered in eventHandler()");
+            seeMoreAlbumsOfTheYearOnClick(args[2]);
+        }
+        else if(args[1] && args[1] == 'read_more') {
+            console.log("read_more block entered in eventHandler()");
+            //event.preventDefault();
+            readMoreOnClick(args[2]); 
+        }
+        else {
+            simpleAlbumView();
+            $(".see_more").show();
+            $(".more").hide();   // Hide the rest of the albums
+
+            //console.log("Looking up Best albums of the year Overview");
+            for (the_year = 2009; the_year <= 2012; the_year++) {
+                //for (the_year = 2012; the_year >= 2009; the_year--) {
+                if ($("#best_of_"+the_year).hasClass("started") == false) {
+                    $('#spinner').show();
+                    $(document.body).css("background-color", "#ECEBE8")
+                    elem = $("<div class='page best_of " + the_year + "'><h2 class='best_of_header'>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><a href='spotify:app:chirp:best_of:see_more:" + the_year + "' class='see_more'>See More</a></div>");
+                    //TODO: add after top_recent section instead of end of body
+                    $(document.body).append(elem);                 
+                    spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 0, BEST_OF_OVERVIEW_NUM_ALBUMS);
+                }
             }
         }
     }
@@ -213,16 +232,9 @@ var Album = function(data)
 
             if (description) {
                 var link = document.createElement('a');
-                link.href = "spotify:app:chirp:best_of:index"; 
+                link.href = "spotify:app:chirp:best_of:read_more:"+id; 
                 link.appendChild(document.createTextNode('Read More'));
                 link.setAttribute('class', 'read_more');
-
-                link.addEventListener("click", 
-                    function (event) {
-                        event.preventDefault();
-                        readMoreOnClick(id);                
-                    }, 
-                    false);
                 $(elem).append(link);
             }
 
@@ -265,7 +277,7 @@ var App = function()
     return {
         init: function()
         {
-            m.application.observe(m.EVENT.ARGUMENTSCHANGED, switchTabs);
+            m.application.observe(m.EVENT.ARGUMENTSCHANGED, eventHandler);
             //spm.getTopAlbumsNoJQuery(onTopAlbumsLookupReturn);
             spm.getTopAlbums(onTopAlbumsLookupReturn);
             return this;
