@@ -2,7 +2,9 @@
 	"BundleType": "Application",
 	"BundleIdentifier": "chirp",
 	"AppIcon": {
-		"36x18": "tutorial.png"
+		"36x18": "icons/chirp_logo_18.png",
+		"64x64": "icons/chirp_logo_64.png",
+		"128x128": "icons/chirp_logo_128.png"
 	},
 	"AppName": {
 		"en": "CHIRP Radio"
