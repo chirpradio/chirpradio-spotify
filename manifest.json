@@ -8,11 +8,16 @@
 	},
 	"AppName": {
 		"en": "CHIRP Radio"
+	},	
+	"AppDescription": {
+		"en": "Discover music through the lens of CHIRP Radio in Chicago."
 	},
 	"SupportedLanguages": [
 		"en"
 	],
     "RequiredPermissions": ["http://*.spotify.com", "https://chirpradio.appspot.com"],
+	"RequiredInterface": "1",
+	"VendorIdentifier": "com.chirpradio",
 	"DefaultTabs": [
 		{
 			"arguments": "top_recent_albums",
