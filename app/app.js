@@ -278,7 +278,6 @@ var App = function()
         init: function()
         {
             m.application.observe(m.EVENT.ARGUMENTSCHANGED, eventHandler);
-            //spm.getTopAlbumsNoJQuery(onTopAlbumsLookupReturn);
             spm.getTopAlbums(onTopAlbumsLookupReturn);
             return this;
         }        
