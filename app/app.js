@@ -147,6 +147,9 @@ function eventHandler() {
             }
         }
     }
+    else if (args[0] == 'top_recent_albums') {
+        spm.getTopAlbums(onTopAlbumsLookupReturn);
+    }
 };
 
 var Album = function(data)
@@ -278,7 +281,7 @@ var App = function()
         init: function()
         {
             m.application.observe(m.EVENT.ARGUMENTSCHANGED, eventHandler);
-            spm.getTopAlbums(onTopAlbumsLookupReturn);
+            //spm.getTopAlbums(onTopAlbumsLookupReturn);
             return this;
         }        
     };
