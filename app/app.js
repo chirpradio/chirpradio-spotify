@@ -21,7 +21,6 @@ function seeMoreAlbumsOfTheYearOnClick(the_year) {
 }
 
 function readMoreOnClick(id) {
-    console.log("readMoreOnClick entered");
     $(".page").hide();   // Hide all sections
     $(".best_of section article").not("#"+id.toString()).hide();
     $(".best_of").show();
@@ -46,7 +45,6 @@ var onTopAlbumsLookupReturnFile = function(err, albums) {id
 }
 
 var onTopAlbumsLookupReturn = function(err, albums) {
-    console.log("Looking up top recent albums");
     $('#spinner').hide();
     $(document.body).css("background-color", "#ECEBE8");
     
@@ -111,21 +109,16 @@ function simpleAlbumView() {
 
 function eventHandler() {
     var args = m.application.arguments;
-    console.log("Calling eventHandler with args: " + args);
 
     $(".page").hide();   // Hide all sections
     $("."+args[0]).show();  // Show current section
    
     if(args[0] == 'best_of') {
-        console.log("in the if block: args[1] = " + args[1] + ", args[2] = " + args[2]);
         if(args[1] && args[1] == 'see_more') {
             simpleAlbumView();
-            console.log("see_more block entered in eventHandler()");
             seeMoreAlbumsOfTheYearOnClick(args[2]);
         }
         else if(args[1] && args[1] == 'read_more') {
-            console.log("read_more block entered in eventHandler()");
-            //event.preventDefault();
             readMoreOnClick(args[2]); 
         }
         else {
