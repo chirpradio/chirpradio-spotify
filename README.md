@@ -19,3 +19,6 @@
 1. http://v2.chirpradio.org/blog/chirp-radio-best-of-2011
 1. http://v2.chirpradio.org/blog/chirp-radios-best-of-2010
 1. http://v2.chirpradio.org/blog/chirps-best-of-2009
+
+**Development Issues/Notes**
+1. [Preserve browser history in Spotify app when links are clicked and javascript is manipulating DOM](http://stackoverflow.com/questions/14367365/preserve-browser-history-in-spotify-app-when-links-are-clicked-and-javascript-is)
