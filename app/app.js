@@ -124,9 +124,8 @@ function eventHandler() {
         else {
             simpleAlbumView();
             $(".see_more").show();
-            $(".more").hide();   // Hide the rest of the albums
+            $(".more").hide(); 
 
-            //console.log("Looking up Best albums of the year Overview");
             for (the_year = 2009; the_year <= 2012; the_year++) {
                 //for (the_year = 2012; the_year >= 2009; the_year--) {
                 if ($("#best_of_"+the_year).hasClass("started") == false) {
