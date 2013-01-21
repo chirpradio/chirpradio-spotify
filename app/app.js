@@ -112,7 +112,8 @@ function eventHandler() {
 
     $(".page").hide();   // Hide all sections
     $("."+args[0]).show();  // Show current section
-   
+    $("#headertext").text("Recently played albums");   
+
     if(args[0] == 'best_of') {
         if(args[1] && args[1] == 'see_more') {
             simpleAlbumView();
@@ -125,6 +126,7 @@ function eventHandler() {
             simpleAlbumView();
             $(".see_more").show();
             $(".more").hide(); 
+            $("#headertext").text("Albums of the Year");
 
             for (the_year = 2009; the_year <= 2012; the_year++) {
                 //for (the_year = 2012; the_year >= 2009; the_year--) {
