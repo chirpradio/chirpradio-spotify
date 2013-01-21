@@ -48,54 +48,63 @@ var onTopAlbumsLookupReturn = function(err, albums) {
     $('#spinner').hide();
     $(document.body).css("background-color", "#ECEBE8");
     
-    albums.this_week.releases.forEach(function (top_album) {
-        data=new Object();
-        data.title = top_album.release;
-        data.artist_name = top_album.artist;
-        data.artist_id=0;
-        data.label = top_album.label;
-        data.container_id = "top_recent_albums"
-        album = new Album(data);
-        album.draw(0);
-    });
+    if (err == null) {
+        albums.this_week.releases.forEach(function (top_album) {
+            data=new Object();
+            data.title = top_album.release;
+            data.artist_name = top_album.artist;
+            data.artist_id=0;
+            data.label = top_album.label;
+            data.container_id = "top_recent_albums"
+            album = new Album(data);
+            album.draw(0);
+        });
+    } else {
+       $("#top_recent_albums").append("<h1>Error accessing CHIRP<br/></h1>");
+    }
 }
 
 var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_album) {
     $('#spinner').hide();
-    $(document.body).css("background-color", "#ECEBE8")
-    var more = false;
+    $(document.body).css("background-color", "#ECEBE8");
 
-    if ($("#best_of_"+year).hasClass("loaded") == false) {
-        if($("#best_of_"+year).hasClass("started") == true) {
-            //short_list = albums.top_albums[0..num_albums+1];
-            short_list = albums.top_albums.slice(begin_album,end_album);
-            $("#best_of_"+year).addClass("loaded");
-            more = true;
-        }
-        else if(albums.top_albums.length > end_album) {
-            short_list = albums.top_albums.slice(begin_album,end_album);
-            $("#best_of_"+year).addClass("started");
-        }
-        else {
-            short_list = albums.top_albums;
-            $("#best_of_"+year).addClass("loaded");
+    if (err == null) {    
+        var more = false;
+
+        if ($("#best_of_"+year).hasClass("loaded") == false) {
+            if($("#best_of_"+year).hasClass("started") == true) {
+                //short_list = albums.top_albums[0..num_albums+1];
+                short_list = albums.top_albums.slice(begin_album,end_album);
+                $("#best_of_"+year).addClass("loaded");
+                more = true;
+            }
+            else if(albums.top_albums.length > end_album) {
+                short_list = albums.top_albums.slice(begin_album,end_album);
+                $("#best_of_"+year).addClass("started");
+            }
+            else {
+                short_list = albums.top_albums;
+                $("#best_of_"+year).addClass("loaded");
+            } 
+
+            short_list.forEach(function (top_album) {
+                data=new Object();
+                data.title = top_album.release;
+                data.artist_name = top_album.artist;
+                data.description = top_album.description;
+                data.artist_id=0;
+                data.container_id = "best_of_" + year;     
+                data.year =  year;  
+                data.label = top_album.label;
+                if (more == true)
+                    data.more = true;
+                album = new Album(data);
+                album.draw(0);
+            });
         } 
-
-        short_list.forEach(function (top_album) {
-            data=new Object();
-            data.title = top_album.release;
-            data.artist_name = top_album.artist;
-            data.description = top_album.description;
-            data.artist_id=0;
-            data.container_id = "best_of_" + year;     
-            data.year =  year;  
-            data.label = top_album.label;
-            if (more == true)
-                data.more = true;
-            album = new Album(data);
-            album.draw(0);
-        });
-    }    
+    } else {
+        $("#top_recent_albums").append("<h1>Error accessing CHIRP<br/></h1>");
+    }   
 }
 
 function simpleAlbumView() {
