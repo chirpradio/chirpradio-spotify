@@ -30,6 +30,10 @@ function readMoreOnClick(id) {
     $("#"+id + " p .description_long").show();
     $("#"+id + " p .description").hide();    
     $("#"+id).addClass("verbose");  
+    //add "Share" button only when read more is clicked
+    //if ($("#"+id + " #share_button").length == 0) {
+    //    $("#"+id + " button").after(button);
+    //}
 }
 
 //callback function when top albums are looked up
@@ -240,6 +244,22 @@ var Album = function(data)
                 link.setAttribute('class', 'read_more');
                 $(elem).append(link);
             }
+
+            var button = document.createElement('button');
+            var span = document.createElement('span');
+
+            //link.href = "spotify:app:chirp:best_of:read_more:"+id; 
+            span.setAttribute('class', 'share');        
+            button.appendChild(span);
+            button.appendChild(document.createTextNode('Share'));
+            button.setAttribute('class', 'button icon');
+            button.setAttribute('id', 'share_button');
+            button.setAttribute('value', "spotify:album:" + id);    
+            button.addEventListener('click', function() {
+                console.log("share");
+                m.application.showSharePopup(button, 'spotify:album:'+id);
+            });
+            $(elem).append(button);
 
             if (more == true)
                 $(elem).addClass("more");          
