@@ -16,8 +16,11 @@ function seeMoreAlbumsOfTheYearOnClick(the_year) {
     $(".more").show();   
     $(".see_more").hide();  
   
-    if ($("#best_of_"+the_year).hasClass("loaded") == false)
+
+    if ($("#best_of_"+the_year).hasClass("loaded") == false) {
+        console.log("Looking up the remainder of Albums of " + the_year);
         spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, BEST_OF_OVERVIEW_NUM_ALBUMS, BEST_OF_OVERVIEW_TOTAL_ALBUMS);
+    }
 }
 
 function readMoreOnClick(id) {
@@ -51,6 +54,7 @@ var onTopAlbumsLookupReturnFile = function(err, albums) {id
 var onTopAlbumsLookupReturn = function(err, albums) {
     $('#spinner').hide();
     $(document.body).css("background-color", "#ECEBE8");
+    console.log("Looking up Recent top albums");
     
     if (err == null) {
         albums.this_week.releases.forEach(function (top_album) {
