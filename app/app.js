@@ -308,5 +308,7 @@ var App = function()
 
 };
 
-exports.App  = App;
-exports.Album = Album;
+if (typeof(exports) != "undefined") {
+    exports.App  = App;
+    exports.Album = Album;
+}
