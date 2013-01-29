@@ -183,9 +183,7 @@ var Album = function(data)
                         "<span class='label'>" + (label ? "Label: " + label : "") + "</span><br>" +
                         "<span class='description'>" + (description ? description.substring(0, 50)+"..." : "") + "</span>" +
                         "<span class='description_long' style='display:none;'>" + (description ? description : "") + "</span>" +                        
-                        //<span class="label">(Island)</span> 
-                    "</p>" +
-                    "<button id='savePlaylist' class='add-playlist sp-button sp-icon'> <span class='sp-plus'></span>Add as Playlist</button>" +                
+                    "</p>" +             
                     "</article>");
         elemDiv  = $("<div style='display:block'>" +
                       "<div class='dets'>" + 
@@ -249,6 +247,17 @@ var Album = function(data)
                 link.setAttribute('class', 'read_more');
                 $(elem).append(link);
             }
+
+            var add_to_playlist_button = document.createElement('button');
+            var add_to_playlist_plus_sign = document.createElement('span');
+            add_to_playlist_plus_sign.setAttribute('class', 'sp-plus');        
+            add_to_playlist_button.appendChild(add_to_playlist_plus_sign);
+            add_to_playlist_button.appendChild(document.createTextNode('Add as Playlist'));
+            add_to_playlist_button.setAttribute('class', 'badd-playlist sp-button sp-icon');
+            add_to_playlist_button.setAttribute('id', 'savePlaylist');
+            $(elem).append(add_to_playlist_button);
+
+            //"<button id='savePlaylist' class='add-playlist sp-button sp-icon'> <span class='sp-plus'></span>Add as Playlist</button>" +  
 
             var button = document.createElement('button');
             var span = document.createElement('span');
