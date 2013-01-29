@@ -53,7 +53,7 @@ header nav ol { display: block !important; padding: 2px 0 0 80px; min-height: 65
 
 overflow: hidden; 
 width:160px;  
-height:260px;  
+/*height:320px;*/  
 float: left; 
 position:relative;
 
@@ -66,14 +66,28 @@ position:relative;
     padding: 20px;
 
 }
-
+.top_recent_albums .track{
+  height:320px;
+}
 
 
 /* Depricated? -- .track p { font-size: 1.4em; line-height: 1.2; overflow: hidden; margin-top: 7px; margin-bottom: 7px;}*/
 
 .track p { font-size: 1.1em; line-height: 1.2; overflow: hidden; margin: 7px 0;}
 
-#savePlaylist { position:absolute; bottom:0; margin-bottom:15px;}
+/*------ elements inside of the tile -----*/
+#savePlaylist { 
+  margin: 10px 0 0 0;
+}
+#share_button{
+  margin: 10px 0 0 0;
+}
+.read_more{
+  display: block;
+
+}
+/*----------------------------------------*/
+
 
 .artist { font-family: "proxima-nova-1", "proxima-nova-2", "Arial", Helmet, Freesans, sans-serif; font-weight: 600; color: #822036; font-size: 1.1em; display:block;}
 
@@ -106,8 +120,7 @@ position:relative;
 
 .best_of .track{
   float: left;
-  height: 310px;
-
+  height: 360px;
 }
 
 a.see_more{
