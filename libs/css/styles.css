@@ -52,7 +52,7 @@ header nav ol { display: block !important; padding: 2px 0 0 80px; min-height: 65
 
 
 overflow: hidden; 
-width:160px;  
+width:170px;  
 /*height:320px;*/  
 float: left; 
 position:relative;
@@ -67,7 +67,7 @@ position:relative;
 
 }
 .top_recent_albums .track{
-  height:320px;
+  /*height:320px;*/
 }
 
 
@@ -84,6 +84,9 @@ position:relative;
 }
 .read_more{
   display: block;
+  color: #822036;
+  font-size: 12px;
+  font-weight: bold;
 
 }
 /*----------------------------------------*/
@@ -114,8 +117,9 @@ position:relative;
 .best_of{
   padding-left:20px;
   min-height: 420px;
-  margin: 0 0 40px 0;
+  margin: 50px 0 0px 0;
   clear: both;
+  position: relative;
 }
 
 .best_of .track{
@@ -125,12 +129,14 @@ position:relative;
 
 a.see_more{
   display: block;
-  clear: both;
-  color: #822036;
-  font-size: 14px;
-  font-weight: bold;
-  position: relative;
-  left: 10px;
+clear: both;
+color: #822036;
+font-size: 12px;
+font-weight: bold;
+position: absolute;
+left: 130px;
+top: 1px;
+
 }
 
 
@@ -144,6 +150,7 @@ a.see_more{
   .track{
     margin: 20px auto 20px;
     float: none;
+    width:170px;
   }
  }
 
