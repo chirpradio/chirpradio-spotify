@@ -69,6 +69,11 @@ header nav a {
   top: 0;
 }
 
+header nav a[href^="http:"]::after {
+  content: url('../img/greyexternal.png');
+  opacity: 1;
+}
+
 #container {
   border: 1px dotted #990000;
   width: auto;
