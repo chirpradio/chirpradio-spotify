@@ -13,6 +13,9 @@ body {
   background-repeat: no-repeat, repeat;
 }
 
+.page {
+  outline: 1px solid green;
+}
 .page:after {
   content: ".";
   display: block;
@@ -64,7 +67,7 @@ header nav a {
   color: #ccc;
   text-shadow: none;
   position: absolute;
-  margin: 24px 0px 0px 10px;
+  margin: 26px 0px 0px 10px;
   left: 0;
   top: 0;
 }
@@ -85,7 +88,7 @@ header nav a[href^="http:"]::after {
   margin: 20px auto 0;
   clear: both;
   overflow: hidden;
-  width: 1263px;
+  width: 1280px;
 }
 
 .tracks .more {
@@ -113,7 +116,7 @@ header nav a[href^="http:"]::after {
 
 .track {
   overflow: hidden;
-  width: 170px;
+  width: 162px;
   /*height:320px;*/  
 float: left;
   position: relative;
@@ -221,8 +224,10 @@ a.see_more {
   .track {
     margin: 20px auto 20px;
     float: none;
-    width: 170px;
   }
+  header nav a {
+  display: none;
+}
 }
 
 .verbose {
@@ -238,40 +243,39 @@ a.see_more {
   width: 200px;
 }
 
-@media (min-width: 434px) and (max-width: 663px) {
+@media (min-width: 434px) and (max-width: 662px) {
   .tracks {
     width: 440px;
     margin: 20px auto;
   }
+
 }
   
-@media (min-width: 663px) and (max-width: 768px) {
+@media (min-width: 663px) and (max-width: 857px) {
   .track {
-    width: 170px; /*was: width: 130px -AS*/ 
     border-top: none;
   }
   
   .tracks {
     margin: 20px auto;
-    width: 663px;
+    width: 643px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1089px) {
+@media (min-width: 858px) and (max-width: 1089px) {
   .track {
-    width: 170px;/*was: width: 140px -AS*/
   }
   
   .tracks {
     margin: 20px auto;
-    width: 888px;
+    width: 856px;
   }
 
 }
 
 @media (min-width: 1090px) and (max-width: 1300px) {
   .tracks {
-    width: 1050px;
+    width: 1075px;
     margin: 20 auto;
   }
 }
