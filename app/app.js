@@ -151,7 +151,7 @@ function eventHandler() {
                 if ($("#best_of_"+the_year).hasClass("started") == false) {
                     $('#spinner').show();
                     $(document.body).css("background-color", "#ECEBE8")
-                    elem = $("<div class='page best_of " + the_year + "'><h2 class='best_of_header'>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><a href='spotify:app:chirp:best_of:see_more:" + the_year + "' class='see_more'>See More</a></div>");
+                    elem = $("<div class='page best_of " + the_year + "'><h2 class='best_of_header'>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><div class='wrap'><a href='spotify:app:chirp:best_of:see_more:" + the_year + "' class='see_more'>See More</a></div></div>");
                     //TODO: add after top_recent section instead of end of body
                     $(document.body).append(elem);                 
                     spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 0, BEST_OF_OVERVIEW_NUM_ALBUMS);

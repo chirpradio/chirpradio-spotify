@@ -7,15 +7,13 @@
 
 body {
   background-attachment: fixed, fixed;
-  background-color: #EAEAEA;
+  background-color: #e1e0dd;
   background-image: url("../img/rings.png"), url("../img/paper-trans.png");
   background-position: -200px -150px, 50% top;
   background-repeat: no-repeat, repeat;
+  padding-bottom: 20px !important;
 }
 
-.page {
-  outline: 1px solid green;
-}
 .page:after {
   content: ".";
   display: block;
@@ -84,6 +82,11 @@ header nav a[href^="http:"]::after {
   padding: 0px 1px;
 }
 
+.page {
+  margin: 20px auto;
+  width: 856px;
+}
+
 .tracks {
   margin: 20px auto 0;
   clear: both;
@@ -128,6 +131,7 @@ float: left;
   margin: 0 5px 10px;
   padding: 20px;
   min-height: 317px;
+  text-align: left;
 }
 
 .top_recent_albums .track {
@@ -191,34 +195,48 @@ float: left;
 
 /*-----  Albums of the Year Styles -----*/
 
-.best_of {
-  padding-left: 20px;
-  min-height: 420px;
-  margin: 50px 0 0px 0;
-  clear: both;
-  position: relative;
-}
-
-.best_of .track {
-  float: left;
-  height: 360px;
-}
 
 a.see_more {
-  display: block;
+  display: inline-block;
   clear: both;
-  color: #822036;
+  background-color:#822036;
+  color: #eee;
+  padding: 4px 8px;
   font-size: 12px;
   font-weight: bold;
-  position: absolute;
-  left: 130px;
-  top: 1px;
+  margin-left: 5px;
+  text-shadow: none;
+}
+
+.wrap {
+  clear: both;
+}
+.best_of,
+.tracks  {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.best_of {
+  margin-bottom: 40px !important;
+}
+.best_of .track {
+  min-height: 394px;
+}
+.best_of h2,
+.tracks h2 {
+  font-family: "proxima-nova-extra-condensed-1", "proxima-nova-extra-condensed-2", "Arial Black", Helmet, Freesans, sans-serif; 
+  font-weight: 900; 
+  text-transform: uppercase; 
+  font-size: 1.7em; 
+  padding: 5px 0; 
+  line-height: 1; 
 }
 
 /*-----  START MEDIA QUERIES -----*/
 
 @media (min-width: 0px) and (max-width: 434px) {
-  .tracks {
+  .tracks,
+  .page {
     width: auto;
   }
   
@@ -245,7 +263,8 @@ a.see_more {
 }
 
 @media (min-width: 434px) and (max-width: 662px) {
-  .tracks {
+  .tracks,
+  .page {
     width: 440px;
     margin: 20px auto;
   }
@@ -257,24 +276,29 @@ a.see_more {
     border-top: none;
   }
   
-  .tracks {
+  .tracks,
+  .page {
     margin: 20px auto;
     width: 643px;
   }
 }
 
 @media (min-width: 858px) and (max-width: 1089px) {
-  .track {
+  .page {
+    margin: 20px auto;
+    width: 643px;
   }
-  
-  .tracks {
+  .tracks{
     margin: 20px auto;
     width: 856px;
   }
-
 }
 
 @media (min-width: 1090px) and (max-width: 1300px) {
+  .page {
+    margin: 20px auto;
+    width: 856px;
+  }
   .tracks {
     width: 1075px;
     margin: 20 auto;
