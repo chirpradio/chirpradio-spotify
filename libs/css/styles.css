@@ -310,7 +310,7 @@ a.see_more {
   font-size: 15px;
 }
 .verbose span.description_long {
-  display: block;
+  display: block !important;
   clear: both;
   display: absolute;
   padding: 20px 20px 20px 0px;
