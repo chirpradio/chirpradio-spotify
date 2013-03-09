@@ -30,7 +30,7 @@ function readMoreOnClick(id) {
     $(".see_more").hide();  
     $(".read_more").hide();
     $(".best_of_header").hide();
-    $("#"+id + " p .description_long").show();
+    $("#"+id + " .description_long").show();
     $("#"+id + " p .description").hide();    
     $("#"+id).addClass("verbose");  
     //add "Share" button only when read more is clicked
@@ -120,7 +120,7 @@ function simpleAlbumView() {
     $(".best_of_header").show();  
     $(".best_of section article").show();
     $(".best_of section article").removeClass('verbose');      
-    $(".best_of section article p .description_long").hide();
+    $(".best_of section article .description_long").hide();
     $(".best_of section article p .description").show();   
 }
 
@@ -151,7 +151,7 @@ function eventHandler() {
                 if ($("#best_of_"+the_year).hasClass("started") == false) {
                     $('#spinner').show();
                     $(document.body).css("background-color", "#ECEBE8")
-                    elem = $("<div class='page best_of " + the_year + "'><h2 class='best_of_header'>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><a href='spotify:app:chirp:best_of:see_more:" + the_year + "' class='see_more'>See More</a></div>");
+                    elem = $("<div class='page best_of " + the_year + "'><h2 class='best_of_header'>Best of "+ the_year +"</h2><section id='best_of_" + the_year + "'></section><div class='wrap'><a href='spotify:app:chirp:best_of:see_more:" + the_year + "' class='see_more'>See More</a></div></div>");
                     //TODO: add after top_recent section instead of end of body
                     $(document.body).append(elem);                 
                     spm.getBestOf(onBestOfAlbumsLookupReturn, the_year, 0, BEST_OF_OVERVIEW_NUM_ALBUMS);
@@ -176,14 +176,16 @@ var Album = function(data)
         id       = null,
         pl       = null,
         elem     = $("<article class='track'>" +
+                   "<div class='detailwrap'>" +
                    "<p>" +
                         "<strong class='artist'>" + artist + "</strong>" +
                         //"<span class='song'>" + title + "</span> from" + 
                         "<em class='album'>" + title + "</em>" +
                         "<span class='label'>" + (label ? "Label: " + label : "") + "</span><br>" +
                         "<span class='description'>" + (description ? description.substring(0, 50)+"..." : "") + "</span>" +
-                        "<span class='description_long' style='display:none;'>" + (description ? description : "") + "</span>" +                        
-                    "</p>" +             
+                    "</p>" +
+                    "</div>" +
+                    "<span class='description_long' style='display:none;'>" + (description ? description : "") + "</span>" +                        
                     "</article>");
         elemDiv  = $("<div style='display:block'>" +
                       "<div class='dets'>" + 
