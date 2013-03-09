@@ -5,12 +5,12 @@
 /* Colors */
 /* Color Usage */
 
-body { 
- background-attachment: fixed, fixed;
-    background-color: #EAEAEA;
-    background-image: url("../img/rings.png"), url("../img/paper-trans.png");
-    background-position: -200px -150px, 50% top;
-    background-repeat: no-repeat, repeat;
+body {
+  background-attachment: fixed, fixed;
+  background-color: #EAEAEA;
+  background-image: url("../img/rings.png"), url("../img/paper-trans.png");
+  background-position: -200px -150px, 50% top;
+  background-repeat: no-repeat, repeat;
 }
 
 .page:after {
@@ -23,116 +23,156 @@ body {
 }
 
 .home {
-  background: url(CHIRPradio.png) no-repeat 13px center; 
-  width: 270px; 
-  height: 60px; 
+  background: url(CHIRPradio.png) no-repeat 13px center;
+  width: 270px;
+  height: 60px;
   margin: 0px auto;
   padding: 10px 0px 0 0;
 }
 
-header nav { background: #3f3437; background: rgba(0, 0, 0, 0.75); text-align: center; }
-
-
-
-#spinner { position: fixed; top: 50%; left: 50%; }
-
-.notification { background: #822036; padding: 10px 20px 7px; }
-
-.notification a { background: #822036; padding: 10px 20px 7px; color: #FBFB77; line-height: 1.6; font-size: 1.2em; font-family: "proxima-nova-1", "proxima-nova-2", "Arial", Helmet, Freesans, sans-serif; }
-
-
-
-header nav { 
-
-
+header nav {
+  background: #3f3437;
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
 }
 
-header nav a{ 
-color: #ccc;
-text-shadow: none;
-position: absolute;
-margin: 24px 0px 0px 10px;
-left: 0;
-top: 0;
-
+#spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
 }
 
-
-#container{
-
-	border: 1px dotted #990000;
-	width: auto;
-	margin: 0 auto;
-	padding: 0px 1px;
-
+.notification {
+  background: #822036;
+  padding: 10px 20px 7px;
 }
-.tracks { margin: 20px auto 0; clear: both; overflow: hidden; width:1263px;}
 
-.tracks .more { -webkit-border-radius: 6px; -moz-border-radius: 6px; -ms-border-radius: 6px; -o-border-radius: 6px; border-radius: 6px; -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4); -moz-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4); box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4); background: white; background: rgba(255, 255, 255, 0.5); padding: 10px; clear: both; text-align: center; margin-bottom: 15px; }
+.notification a {
+  background: #822036;
+  padding: 10px 20px 7px;
+  color: #FBFB77;
+  line-height: 1.6;
+  font-size: 1.2em;
+  font-family: "proxima-nova-1", "proxima-nova-2", "Arial", Helmet, Freesans, sans-serif;
+}
 
-.tracks .more:hover { background: rgba(255, 255, 255, 0.9); }
+header nav {
+  
+}
 
+header nav a {
+  color: #ccc;
+  text-shadow: none;
+  position: absolute;
+  margin: 24px 0px 0px 10px;
+  left: 0;
+  top: 0;
+}
+
+#container {
+  border: 1px dotted #990000;
+  width: auto;
+  margin: 0 auto;
+  padding: 0px 1px;
+}
+
+.tracks {
+  margin: 20px auto 0;
+  clear: both;
+  overflow: hidden;
+  width: 1263px;
+}
+
+.tracks .more {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  clear: both;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.tracks .more:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
 
 /*.track { overflow: hidden; padding: 10px 10px; width:170px; height:260px; background-color: #fff; margin: 10px;  float: left; position:relative; }*/
 
-
-.track { 
-
-
-overflow: hidden; 
-width:170px;  
-/*height:320px;*/  
-float: left; 
-position:relative;
-
-    -moz-box-sizing: border-box;
-    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
-    border-radius: 6px 6px 6px 6px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) inset;
-    display: block;
-    margin: 0 5px 10px;
-    padding: 20px;
-
-}
-.top_recent_albums .track{
-  /*height:320px;*/
+.track {
+  overflow: hidden;
+  width: 170px;
+  /*height:320px;*/  
+float: left;
+  position: relative;
+  -moz-box-sizing: border-box;
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) inset;
+  display: block;
+  margin: 0 5px 10px;
+  padding: 20px;
 }
 
+.top_recent_albums .track {
+  
+
+}
 
 /* Depricated? -- .track p { font-size: 1.4em; line-height: 1.2; overflow: hidden; margin-top: 7px; margin-bottom: 7px;}*/
 
-.track p { font-size: 1.1em; line-height: 1.2; overflow: hidden; margin: 7px 0;}
+.track p {
+  font-size: 1.1em;
+  line-height: 1.2;
+  overflow: hidden;
+  margin: 7px 0;
+}
 
 /*------ elements inside of the tile -----*/
-#savePlaylist { 
+
+#savePlaylist {
   margin: 10px 0 0 0;
 }
-#share_button{
+
+#share_button {
   margin: 10px 0 0 0;
 }
-.read_more{
+
+.read_more {
   display: block;
   color: #822036;
   font-size: 12px;
   font-weight: bold;
-
 }
+
 /*----------------------------------------*/
 
+.artist {
+  font-family: "proxima-nova-1", "proxima-nova-2", "Arial", Helmet, Freesans, sans-serif;
+  font-weight: 600;
+  color: #822036;
+  font-size: 1.1em;
+  display: block;
+}
 
-.artist { font-family: "proxima-nova-1", "proxima-nova-2", "Arial", Helmet, Freesans, sans-serif; font-weight: 600; color: #822036; font-size: 1.1em; display:block;}
-
-.track .album { 
+.track .album {
   width: 174px;
-  color: #3f3437; 
-  padding-bottom: 10px; 
+  color: #3f3437;
+  padding-bottom: 10px;
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.sp-player{
+.sp-player {
   margin: 0 auto;
   width: 161px !important;
   height: 161px !important;
@@ -142,99 +182,93 @@ position:relative;
 
 /*-----  Albums of the Year Styles -----*/
 
-.best_of{
-  padding-left:20px;
+.best_of {
+  padding-left: 20px;
   min-height: 420px;
   margin: 50px 0 0px 0;
   clear: both;
   position: relative;
 }
 
-.best_of .track{
+.best_of .track {
   float: left;
   height: 360px;
 }
 
-a.see_more{
+a.see_more {
   display: block;
-clear: both;
-color: #822036;
-font-size: 12px;
-font-weight: bold;
-position: absolute;
-left: 130px;
-top: 1px;
-
+  clear: both;
+  color: #822036;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  left: 130px;
+  top: 1px;
 }
-
-
 
 /*-----  START MEDIA QUERIES -----*/
 
-@media (min-width: 0px) and (max-width: 434px) { 
-  .tracks { 
-    width:auto;
+@media (min-width: 0px) and (max-width: 434px) {
+  .tracks {
+    width: auto;
   }
-  .track{
+  
+  .track {
     margin: 20px auto 20px;
     float: none;
-    width:170px;
+    width: 170px;
   }
- }
-
-
-
-.verbose{
-width: 800px;
-}
-.verbose .sp-player{
-float: left;
-}
-.verbose p{
-float: right;
-width: 200px;
 }
 
-@media (min-width: 434px) and (max-width: 663px) { 
+.verbose {
+  width: 800px;
+}
 
-  .tracks { 
-    width:440px;
+.verbose .sp-player {
+  float: left;
+}
+
+.verbose p {
+  float: right;
+  width: 200px;
+}
+
+@media (min-width: 434px) and (max-width: 663px) {
+  .tracks {
+    width: 440px;
     margin: 20px auto;
   }
- }
-
-
-@media (min-width: 663px) and (max-width: 768px) { 
-	.track {  
-		width:170px; /*was: width: 130px -AS*/ 
-		border-top: none;
-	}
-	.tracks { 
-    margin: 20px auto;
-    width:663px;
-	}
 }
-
+  
+@media (min-width: 663px) and (max-width: 768px) {
+  .track {
+    width: 170px; /*was: width: 130px -AS*/ 
+    border-top: none;
+  }
+  
+  .tracks {
+    margin: 20px auto;
+    width: 663px;
+  }
+}
 
 @media (min-width: 768px) and (max-width: 1089px) {
-	.track {  
-		width:170px; /*was: width: 140px -AS*/
-	}
-	.tracks { 
+  .track {
+    width: 170px;/*was: width: 140px -AS*/
+  }
+  
+  .tracks {
     margin: 20px auto;
-    width:888px;
-	}
-   }
+    width: 888px;
+  }
 
+}
 
 @media (min-width: 1090px) and (max-width: 1300px) {
-
-  .tracks { 
-    width:1050px;
+  .tracks {
+    width: 1050px;
     margin: 20 auto;
   }
 }
 
 /*-----  END MEDIA QUERIES -----*/
-
-
