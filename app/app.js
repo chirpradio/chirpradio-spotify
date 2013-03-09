@@ -30,7 +30,7 @@ function readMoreOnClick(id) {
     $(".see_more").hide();  
     $(".read_more").hide();
     $(".best_of_header").hide();
-    $("#"+id + " p .description_long").show();
+    $("#"+id + " .description_long").show();
     $("#"+id + " p .description").hide();    
     $("#"+id).addClass("verbose");  
     //add "Share" button only when read more is clicked
@@ -120,7 +120,7 @@ function simpleAlbumView() {
     $(".best_of_header").show();  
     $(".best_of section article").show();
     $(".best_of section article").removeClass('verbose');      
-    $(".best_of section article p .description_long").hide();
+    $(".best_of section article .description_long").hide();
     $(".best_of section article p .description").show();   
 }
 
@@ -176,14 +176,16 @@ var Album = function(data)
         id       = null,
         pl       = null,
         elem     = $("<article class='track'>" +
+                   "<div class='detailwrap'>" +
                    "<p>" +
                         "<strong class='artist'>" + artist + "</strong>" +
                         //"<span class='song'>" + title + "</span> from" + 
                         "<em class='album'>" + title + "</em>" +
                         "<span class='label'>" + (label ? "Label: " + label : "") + "</span><br>" +
                         "<span class='description'>" + (description ? description.substring(0, 50)+"..." : "") + "</span>" +
-                        "<span class='description_long' style='display:none;'>" + (description ? description : "") + "</span>" +                        
-                    "</p>" +             
+                    "</p>" +
+                    "</div>" +
+                    "<span class='description_long' style='display:none;'>" + (description ? description : "") + "</span>" +                        
                     "</article>");
         elemDiv  = $("<div style='display:block'>" +
                       "<div class='dets'>" + 

@@ -4,14 +4,17 @@
 /* Fonts */
 /* Colors */
 /* Color Usage */
-
+html,
 body {
   background-attachment: fixed, fixed;
-  background-color: #e1e0dd;
+  background-color: #e1e0dd !important;
   background-image: url("../img/rings.png"), url("../img/paper-trans.png");
   background-position: -200px -150px, 50% top;
   background-repeat: no-repeat, repeat;
   padding-bottom: 20px !important;
+}
+html {
+  padding-bottom: 0 !important;
 }
 
 .page:after {
@@ -245,21 +248,81 @@ a.see_more {
     float: none;
   }
   header nav a {
-  display: none;
-}
+    display: none;
+  }
+  .best_of .verbose {
+    width: 80% !important;
+    min-width: 380px !important;
+  }
 }
 
-.verbose {
-  width: 800px;
+.best_of .verbose {
+  width: 600px;
+  min-height: 240px;
+  margin: 0px auto;
+  float: none;
 }
 
 .verbose .sp-player {
-  float: left;
+}
+
+.verbose .artist {
+  font-family: "proxima-nova-1", "proxima-nova-2", "Arial", Helmet, Freesans, sans-serif;
+  font-weight: 600;
+  color: #822036;
+  font-size: 1.1em;
+  display: block;
+}
+
+.artist {
+  font-family: "proxima-nova-1", "proxima-nova-2", "Arial", Helmet, Freesans, sans-serif;
+  font-weight: 600;
+  color: #822036;
+  font-size: 1.1em;
+  display: block;
 }
 
 .verbose p {
-  float: right;
-  width: 200px;
+  float: left;
+  width: auto;
+}
+.verbose div.detailwrap,
+.verbose button {
+  position: absolute !important;
+}
+
+.verbose div.detailwrap {
+    margin-top: -173px;
+  margin-left: 173px;
+}
+
+.verbose strong.artist {
+  font-size: 24px;
+}
+
+.verbose em.album {
+  font-size: 17px;
+  width: auto;
+  white-space: normal;
+}
+
+.verbose span.label {
+  font-size: 15px;
+}
+.verbose span.description_long {
+  display: block;
+  clear: both;
+  display: absolute;
+  padding: 20px 20px 20px 0px;
+}
+
+.verbose button#savePlaylist {
+  margin: 0px 0 0 173px;
+  top: 127px;
+}
+.verbose button#share_button {
+  margin: 0px 0 0 173px;
+  top: 160px; 
 }
 
 @media (min-width: 434px) and (max-width: 662px) {
@@ -268,7 +331,10 @@ a.see_more {
     width: 440px;
     margin: 20px auto;
   }
-
+  .best_of .verbose {
+    width: 80%;
+    min-width: 380px;
+  }
 }
   
 @media (min-width: 663px) and (max-width: 857px) {
