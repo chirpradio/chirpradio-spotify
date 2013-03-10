@@ -6,7 +6,7 @@ var spm = sp.require("app/spotify-metadata"),
  views  = sp.require("sp://import/scripts/api/views");
 
 var BEST_OF_OVERVIEW_NUM_ALBUMS = 4;
-var BEST_OF_OVERVIEW_TOTAL_ALBUMS = 25;
+var BEST_OF_OVERVIEW_TOTAL_ALBUMS = 30;
 
 function seeMoreAlbumsOfTheYearOnClick(the_year) {
     //window.location = sp:app:chirp:arguments;
