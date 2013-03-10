@@ -146,7 +146,7 @@ function eventHandler() {
             $(".see_more").show();
             $(".more").hide(); 
 
-            for (the_year = 2009; the_year <= 2012; the_year++) {
+            for (the_year = 2012; the_year >= 2009; the_year--) {
                 //for (the_year = 2012; the_year >= 2009; the_year--) {
                 if ($("#best_of_"+the_year).hasClass("started") == false) {
                     $('#spinner').show();
