@@ -218,13 +218,19 @@ float: left;
 }
 
 .track .album {
-  width: 174px;
+  width: 162px;
   color: #3f3437;
-  padding-bottom: 10px;
+  padding-bottom: 7px;
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+span.label {
+  padding-bottom: 3px;
+  color: #444;
+  display: block;
 }
 
 .sp-player {

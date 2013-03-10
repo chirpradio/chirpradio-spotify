@@ -180,9 +180,9 @@ var Album = function(data)
                    "<p>" +
                         "<strong class='artist'>" + artist + "</strong>" +
                         //"<span class='song'>" + title + "</span> from" + 
-                        "<em class='album'>" + title + "</em>" +
-                        "<span class='label'>" + (label ? "Label: " + label : "") + "</span><br>" +
-                        "<span class='description'>" + (description ? description.substring(0, 50)+"..." : "") + "</span>" +
+                        "<em class='album' alt='" + title + "'>" + title + "</em>" +
+                        "<span class='label'>" + (label ? "Label: " + label : "") + "</span>" +
+                        "<span class='description'>" + (description ? description.substring(0, 60)+"..." : "") + "</span>" +
                     "</p>" +
                     "</div>" +
                     "<span class='description_long' style='display:none;'>" + (description ? description : "") + "</span>" +                        
