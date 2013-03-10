@@ -54,7 +54,7 @@ var onTopAlbumsLookupReturnFile = function(err, albums) {id
 var onTopAlbumsLookupReturn = function(err, albums) {
     $('#spinner').hide();
     $(document.body).css("background-color", "#ECEBE8");
-    console.log("Looking up Recent top albums");
+    console.log("Looking up Recently Top Played Albums");
     
     if (err == null) {
         albums.this_week.releases.forEach(function (top_album) {
