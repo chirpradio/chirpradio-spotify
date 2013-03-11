@@ -20,5 +20,31 @@
 1. [Best of 2010](http://v2.chirpradio.org/blog/chirp-radios-best-of-2010)
 1. [Best of 2009](http://v2.chirpradio.org/blog/chirps-best-of-2009)
 
+**Albums not found on Spotify
+
+2012
+1. The album "Outer Minds - S/T" was not found by Spotify album search API.
+
+2011
+
+1. The album "The Weeknd - House of Balloons" was not found by Spotify album search API.
+1. The album "Cave - Neverendless" was not found by Spotify album search API.
+1. The album "Tennis - Cape Dory" was not found by Spotify album search API.
+1. The album "JC Brooks and the Uptown Sound - Want More" was not found by Spotify album search API.
+
+2010
+
+1. The album "Joanna Newsome - Have One on Me" was not found by Spotify album search API.
+1. The album "Four Tet - There Is Love In You" was not found by Spotify album search API.
+
+2009
+
+1. The album "Pisces - A Lovely Sight" was not found by Spotify album search API.
+1. The album "National Skyline - Bliss & Death" was not found by Spotify album search API.
+
+
 **Development Issues/Notes**
+
 1. [Preserve browser history in Spotify app when links are clicked and javascript is manipulating DOM](http://stackoverflow.com/questions/14367365/preserve-browser-history-in-spotify-app-when-links-are-clicked-and-javascript-is)
+
+

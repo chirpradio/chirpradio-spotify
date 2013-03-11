@@ -33,13 +33,13 @@
     {
       "artist": "Yeah Yeah Yeahs",
       "label": "Interscope",
-      "release": "It’s Blitz",
+      "release": "Its Blitz!",
       "description": "I loved this album, but I never thought that the Grammy folks would agree with anything I think – to my surprise, It’s Blitz was just nominated for Best Alternative Music Album this month. —Jenny Lizak"
     },
     {
       "artist": "The Pains of Being Pure at Heart",
       "label": "Slumberland",
-      "release": "Self-Titled",
+      "release": "The Pains of Being Pure at Heart",
       "description": "I love a pop song. Make it a nice, fuzzy, lyrically-nasty-but-sweet-sounding pop song with male-female vocals, and that’s even better. The best C86 record since, if not 1986, at least the last Velocity Girl album. —Shawn Campbell"
     },
     {
@@ -81,7 +81,7 @@
     {
       "artist": "Madness",
       "label": "Yep Roc",
-      "release": "The Liberty of Norton Fulgate",
+      "release": "The Liberty of Norton Folgate",
       "description": "After bursting onto the scene as a frenetic ska band, Madness put its own stamp on British observational pop, providing a more urban and urbane (but less poetic) variation on the pastoral English paeans of Ray Davies and The Kinks. Years after their heyday, it’s amazing that these elder statesmen have as much to say as they do. The album loosely revolves around the concept of snapshots of London, which suitably inspired the band to whip up a number of songs that rank with their beloved singles from the ‘80s. It is all topped off by the 10 minute title cut, a genre hopping historical journey through a diverse London neighborhood that celebrates immigration as making a great city all the stronger. This great band finally pulls off the great album that was always in them. —Mike Bennett"
     },
     {
@@ -91,13 +91,13 @@
       "description": "Thee Oh Sees have been a busy band. A couple of albums this year, a half dozen singles, and they have all been consistently good. This is a fine album all the way around. They are a garage band writing pop songs with a hint of psych thrown in and some great male and female vocals. They rip through a dozen songs and by the time you are done you are ready to start the album over again. —Patrick Seymour"
     },
     {
-      "artist": "The Noisettes",
+      "artist": "Noisettes",
       "label": "Mercury",
       "release": "Wild Young Hearts",
       "description": "I am a sucker for an album that moves through a variety of styles, and here the Noisettes are, pushing all of my buttons. Well‚ it’s more like an overview of Motown, with all the requisit hooks, but a dash of rock thrown in. Downsides: the album is a bit overproduced, particularly for a band known as one of the rowdiest live acts in London. And their disco-inflected hit, Don’t Upset the Rhythm (Go Baby Go), is a bit too slick, repetitive, and under-written for my taste (but I still groove to it every time it’s on, and never get the urge to skip to the next track). —Tony Breed"
     },
     {
-      "artist": "Fanfarlo Luna",
+      "artist": "Fanfarlo",
       "label": "Atantic",
       "release": "Reservoir",
       "description": "How many instruments did they use on this album?! Strings make it passionate.” —Carolyn Kassnoff"
@@ -105,7 +105,7 @@
     {
       "artist": "The Decemberists",
       "label": "Capitol",
-      "release": "The Hazards of Love",
+      "release": "Hazards of Love",
       "description": "You know what I love about the Decemberists? As they’ve gotten more popular, and switched to a major label (minor-major, perhaps), they’ve just gotten weirder. the Hazards of Love is not just a concept album, it’s an actual story told in song, like any one of the story-songs from Picaresque elongated into a full album. And it’s brilliant. It’s suffused with prog-rock goodness, and features guest vocals by Shara Worden of My Brightest Diamond and Becky Stark of Lavender Diamond. The one flaw? With Colin Meloy singing two roles and narrating, it’s a little hard to follow. Two more guest vocalists would have been welcome. (Ooh! Ooh! The Magnetic Fields’ Stephin Merritt as The Rake; would that not have been great?) —Tony Breed"
     },
     {
@@ -151,9 +151,15 @@
       "description": "After a couple excellent EPs these ex-Black Eyes members put out their full length debut. It is a strange mix of forward thinking punk, Afro beat, free jazz and dub. While that makes it seem like they are throwing everything at the wall to see what sticks, it actually works well blending everything together creating a very unique sounding album, strong debut. —Patrick Seymour"
     },
     {
-      "artist": "Micachu and the Shapes",
+      "artist": "Micachu",
       "label": "Rough Trade",
       "release": "Jewellery",
+      "description": "Just when you thought that the latest crop of post-punk revivalists had squeezed the last drop out of the sounds of the Ghosts of ‘78-‘82 Indie Past, along comes 21 year old Mica Levi to show that there are always new ways to cobble together dissonance and melody. Bits of the early Cure, The Fall, Orange Juice, Wire and others all collide and ping-pong about, while Mica is at turns wistful, cheeky and wise. Adding to the excitement is Mica’s distinctive oddball guitar playing. —Mike Bennett"
+    },
+    {
+      "artist": "Woods",
+      "label": "Woodsist",
+      "release": "Songs of Shame",
       "description": "Just when you thought that the latest crop of post-punk revivalists had squeezed the last drop out of the sounds of the Ghosts of ‘78-‘82 Indie Past, along comes 21 year old Mica Levi to show that there are always new ways to cobble together dissonance and melody. Bits of the early Cure, The Fall, Orange Juice, Wire and others all collide and ping-pong about, while Mica is at turns wistful, cheeky and wise. Adding to the excitement is Mica’s distinctive oddball guitar playing. —Mike Bennett"
     },
     {
