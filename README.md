@@ -20,9 +20,10 @@
 1. [Best of 2010](http://v2.chirpradio.org/blog/chirp-radios-best-of-2010)
 1. [Best of 2009](http://v2.chirpradio.org/blog/chirps-best-of-2009)
 
-**Albums not found on Spotify
+**Albums not found on Spotify**
 
 2012
+
 1. The album "Outer Minds - S/T" was not found by Spotify album search API.
 
 2011
