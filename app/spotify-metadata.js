@@ -11,12 +11,12 @@ exports.searchForTrack = function (artist, track, callback) {
         var tracks = [];
 
         data.tracks.forEach(function (track) {
-          var territories = track.album.availability.territories;
+          //var territories = track.album.availability.territories;
 
-          if (territories == 'worldwide' ||
-              territories.split(' ').indexOf(sp.core.country) >= 0) {
-            tracks.push(m.Track.fromURI(track.href));
-          }
+          //if (territories == 'worldwide' ||
+          //    territories.split(' ').indexOf(sp.core.country) >= 0) {
+          tracks.push(m.Track.fromURI(track.href));
+          //}
         });
 
         if (callback) callback(null, tracks);
@@ -77,12 +77,12 @@ exports.searchForAlbum = function (artist, album, callback) {
       var albums = [];
 
       data.albums.forEach(function (album) {
-        var territories = album.availability.territories;
+        //var territories = album.availability.territories;
 
-        if (territories == 'worldwide' ||
-            territories.split(' ').indexOf(sp.core.country) >= 0) {
+        //if (territories == 'worldwide' ||
+        //    territories.split(' ').indexOf(sp.core.country) >= 0) {
           albums.push(m.Album.fromURI(album.href));
-        }
+        //}
       });
 
       if (callback) callback(null, albums, artist, album);
@@ -91,22 +91,4 @@ exports.searchForAlbum = function (artist, album, callback) {
       if (callback) callback(data);
     },
   });
-
-  // this is the getJSON way to fetch the album info:
-  // $.getJSON('http://ws.spotify.com/search/1/album.json?' + q)
-  //     .success(function (data) {
-  //       var albums = [];
-
-  //       data.albums.forEach(function (album) {
-  //         var territories = album.availability.territories;
-
-  //         if (territories == 'worldwide' ||
-  //             territories.split(' ').indexOf(sp.core.country) >= 0) {
-  //           albums.push(m.Album.fromURI(album.href));
-  //         }
-  //       });
-
-  //       if (callback) callback(null, albums);
-  //     })
-  //     .error(function (err) { if (callback) callback(err) });
 }

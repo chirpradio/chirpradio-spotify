@@ -1,11 +1,11 @@
 sp  = getSpotifyApi(1);
 
 var spm = sp.require("app/spotify-metadata"),
-    m   = sp.require('sp://import/scripts/api/models'),
-    ui  = sp.require("sp://import/scripts/ui");
+    m   = sp.require('$api/models'),
+    ui  = sp.require("sp://import/scripts/ui"),
  views  = sp.require("sp://import/scripts/api/views");
 
-var BEST_OF_OVERVIEW_NUM_ALBUMS = 4;
+var BEST_OF_OVERVIEW_NUM_ALBUMS = 3;
 var BEST_OF_OVERVIEW_TOTAL_ALBUMS = 30;
 
 function seeMoreAlbumsOfTheYearOnClick(the_year) {
@@ -212,25 +212,6 @@ var Album = function(data)
             var player = new views.Player();
             //$(elem).append(album.node);
 
-            $(elem).find("#savePlaylist").click((function(a){
-                return function() {
-
-                pl = new m.Playlist(album.name);
-                $.each(album.tracks,function(index,track) {
-                    pl.add(m.Track.fromURI(track.uri));
-                });
-                    //pl.name  = album.name;
-
-                    //var playlist = m.Playlist.fromURI(a.uri);
-                    pl.subscribed = true;
-                    pl.observe(m.EVENT.CHANGE, function() {
-                        console.log("Playlist is subscribed!");
-                    });
-                }
-            })(album));
-
-            player.track = null;
-
             //adding artifical delay for an unexplainable bug (album cover not showing)
             setTimeout(function() { player.context = album;}, 1000);
             //player.context = album;
@@ -255,7 +236,7 @@ var Album = function(data)
             add_to_playlist_plus_sign.setAttribute('class', 'sp-plus');        
             add_to_playlist_button.appendChild(add_to_playlist_plus_sign);
             add_to_playlist_button.appendChild(document.createTextNode('Add as Playlist'));
-            add_to_playlist_button.setAttribute('class', 'badd-playlist sp-button sp-icon');
+            add_to_playlist_button.setAttribute('class', 'add-playlist sp-button sp-icon');
             add_to_playlist_button.setAttribute('id', 'savePlaylist');
             $(elem).append(add_to_playlist_button);
 
@@ -263,6 +244,24 @@ var Album = function(data)
 
             var button = document.createElement('button');
             var span = document.createElement('span');
+
+            $(elem).find("#savePlaylist").click((function(a){
+                return function() {
+
+                pl = new m.Playlist(album.artist + " - " + album.name);
+                $.each(album.tracks,function(index,track) {
+                    pl.add(m.Track.fromURI(track.uri));
+                });
+                    //pl.name  = album.name;
+                    //var playlist = m.Playlist.fromURI(a.uri);
+                    pl.subscribed = true;
+                    pl.observe(m.EVENT.CHANGE, function() {
+                        console.log("Playlist is subscribed!");
+                    });
+                }
+            })(album));
+
+            player.track = null;
 
             //link.href = "spotify:app:chirp:best_of:read_more:"+id; 
             span.setAttribute('class', 'share');        
