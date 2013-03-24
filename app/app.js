@@ -154,7 +154,7 @@ function simpleAlbumView() {
 
 function eventHandler() {
     var args = m.application.arguments;
-
+    //console.log(args);
     $(".page").hide();   // Hide all sections
     $("."+args[0]).show();  // Show current section
     $("#headertext").text("Recently played albums");   
@@ -355,6 +355,7 @@ var App = function()
         {
             m.application.observe(m.EVENT.ARGUMENTSCHANGED, eventHandler);
             spm.getTopAlbums(onTopAlbumsLookupReturn);
+            eventHandler(); //when reloading the app, make sure the existing selected tab works
             return this;
         }        
     };
