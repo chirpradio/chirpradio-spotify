@@ -120,6 +120,20 @@ var onBestOfAlbumsLookupReturn = function(err, albums, year, begin_album, end_al
                 data.label = top_album.label;
                 if (more == true)
                     data.more = true;
+
+                var q = $.param({q: ['artist:' + data.artist_name].join(' ')});
+                //Format: http://ws.spotify.com/search/1/album.json?q=artist%3ABat+for+Lashes+album%3AThe+Haunted+Man
+                var artist_href;
+                $.ajax({
+                    async: false,
+                    url: 'http://ws.spotify.com/search/1/artist.json?' + q,
+                    dataType: "json",
+                    success: function(data) { artist_href = data.artists[0] ? data.artists[0].href : "Not Found" },
+                    error: function(data) { artist_href = "Not Found" },
+                }); 
+                
+                data.artist_href = artist_href;
+
                 album = new Album(data);
                 album.draw(0);
             });
