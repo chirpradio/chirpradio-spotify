@@ -1,6 +1,7 @@
 {
 	"BundleType": "Application",
 	"BundleIdentifier": "chirp",
+	"BundleVersion" : "1.0.0",
 	"AppIcon": {
 		"36x18": "icons/chirp_logo_18.png",
 		"64x64": "icons/chirp_logo_64.png",
@@ -16,7 +17,7 @@
 		"en"
 	],
     "RequiredPermissions": ["http://*.spotify.com", "https://chirpradio.appspot.com"],
-	"RequiredInterface": "1",
+	"RequiredInterface": 1,
 	"VendorIdentifier": "com.chirpradio",
 	"DefaultTabs": [
 		{
@@ -31,5 +32,9 @@
 				"en": "Albums Of The Year"
 			}
         }
-	]
+	],
+	"Dependencies": {
+	    "api": "0.1.0",
+	    "resources": "0.1.0"
+	}
 }
