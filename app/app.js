@@ -61,7 +61,22 @@ var onTopAlbumsLookupReturn = function(err, albums) {
             data=new Object();
             data.title = top_album.release;
             data.artist_name = top_album.artist;
-            data.artist_id=0;
+            data.id = top_album.id;
+            console.log(data.id);
+
+            var q = $.param({q: ['artist:' + data.artist_name].join(' ')});
+            //Format: http://ws.spotify.com/search/1/album.json?q=artist%3ABat+for+Lashes+album%3AThe+Haunted+Man
+            var artist_href;
+
+            $.ajax({
+                async: false,
+                url: 'http://ws.spotify.com/search/1/artist.json?' + q,
+                dataType: "json",
+                success: function(data) { artist_href = data.artists[0].href },
+                error: function(data) { artist_href = "Not Found" },
+            });          
+
+            data.artist_href = artist_href;
             data.label = top_album.label;
             data.container_id = "top_recent_albums"
             album = new Album(data);
@@ -163,11 +178,13 @@ function eventHandler() {
 
 var Album = function(data)
 {
+    //console.log(data);
     var title    = data.title,
         artist   = data.artist_name,
         description = data.description,
         container_id = data.container_id,
         more     = data.more,
+        id       = data.id,
         artistId = data.artist_id,
         year     = data.year,
         label    = data.label, 
@@ -178,9 +195,8 @@ var Album = function(data)
         elem     = $("<article class='track'>" +
                    "<div class='detailwrap'>" +
                    "<p>" +
-                        "<strong class='artist'>" + artist + "</strong>" +
+                        "<strong class='artist'><a href='" + data.artist_href + "'>" + artist + "</a></strong>" +
                         //"<span class='song'>" + title + "</span> from" + 
-                        "<em class='album' alt='" + title + "'>" + title + "</em>" +
                         "<span class='label'>" + (label ? "Label: " + label : "") + "</span>" +
                         "<span class='description'>" + (description ? description.substring(0, 60)+"..." : "") + "</span>" +
                     "</p>" +
@@ -223,6 +239,16 @@ var Album = function(data)
             $(elem).prepend(player.node);
             $("#"+container_id).append(elem);
 
+            var album_em = document.createElement('em');
+            album_em.setAttribute('class', 'album');
+            album_em.setAttribute('alt', title);
+            var album_link = document.createElement('a');
+            album_link.href = 'spotify:album:' + id;
+            album_em.appendChild(album_link);
+            album_link.appendChild(document.createTextNode(title));
+
+            $(elem).find(".artist").after(album_em);
+
             if (description) {
                 var link = document.createElement('a');
                 link.href = "spotify:app:chirp:best_of:read_more:"+id; 
@@ -264,7 +290,7 @@ var Album = function(data)
             player.track = null;
 
             //link.href = "spotify:app:chirp:best_of:read_more:"+id; 
-            span.setAttribute('class', 'share');        
+            span.setAttribute('class', 'share');   
             button.appendChild(span);
             button.appendChild(document.createTextNode('Share'));
             button.setAttribute('class', 'button icon');
