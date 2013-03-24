@@ -197,7 +197,6 @@ var Album = function(data)
                    "<p>" +
                         "<strong class='artist'><a href='" + data.artist_href + "'>" + artist + "</a></strong>" +
                         //"<span class='song'>" + title + "</span> from" + 
-                        "<em class='album' alt='" + title + "'><a href='spotify:album:" + data.id + "'>" + title + "</a></em>" +
                         "<span class='label'>" + (label ? "Label: " + label : "") + "</span>" +
                         "<span class='description'>" + (description ? description.substring(0, 60)+"..." : "") + "</span>" +
                     "</p>" +
@@ -239,6 +238,16 @@ var Album = function(data)
 
             $(elem).prepend(player.node);
             $("#"+container_id).append(elem);
+
+            var album_em = document.createElement('em');
+            album_em.setAttribute('class', 'album');
+            album_em.setAttribute('alt', title);
+            var album_link = document.createElement('a');
+            album_link.href = 'spotify:album:' + id;
+            album_em.appendChild(album_link);
+            album_link.appendChild(document.createTextNode(title));
+
+            $(elem).find(".artist").after(album_em);
 
             if (description) {
                 var link = document.createElement('a');
