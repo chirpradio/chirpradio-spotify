@@ -353,6 +353,11 @@ var App = function()
     return {
         init: function()
         {
+            //if header is clicked, go to "Recently Played Top Albums" tab
+            $(".home").click(function(){
+                window.location.href = "spotify:app:chirp";
+            });
+
             m.application.observe(m.EVENT.ARGUMENTSCHANGED, eventHandler);
             spm.getTopAlbums(onTopAlbumsLookupReturn);
             eventHandler(); //when reloading the app, make sure the existing selected tab works
