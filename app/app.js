@@ -266,7 +266,7 @@ var Album = function(data)
                 link.href = "spotify:app:chirp:best_of:read_more:"+id; 
                 link.appendChild(document.createTextNode('Read More'));
                 link.setAttribute('class', 'read_more');
-                $(elem).append(link);
+                $(elem).find(".detailwrap").append(link);
             }
 
             var add_to_playlist_button = document.createElement('button');
@@ -276,7 +276,7 @@ var Album = function(data)
             add_to_playlist_button.appendChild(document.createTextNode('Add as Playlist'));
             add_to_playlist_button.setAttribute('class', 'add-playlist sp-button sp-icon');
             add_to_playlist_button.setAttribute('id', 'savePlaylist');
-            $(elem).append(add_to_playlist_button);
+            $(elem).find(".detailwrap").append(add_to_playlist_button);
 
             //"<button id='savePlaylist' class='add-playlist sp-button sp-icon'> <span class='sp-plus'></span>Add as Playlist</button>" +  
 
@@ -313,7 +313,7 @@ var Album = function(data)
                 console.log("share");
                 m.application.showSharePopup(button, 'spotify:album:'+id);
             });
-            $(elem).append(button);
+            $(elem).find(".detailwrap").append(button);
 
             if (more == true)
                 $(elem).addClass("more");          
