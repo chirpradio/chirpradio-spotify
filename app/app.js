@@ -293,6 +293,7 @@ var Album = function(data)
                     //pl.name  = album.name;
                     //var playlist = m.Playlist.fromURI(a.uri);
                     pl.subscribed = true;
+                    $(elem).find("#savePlaylist").attr("disabled", true);
                     pl.observe(m.EVENT.CHANGE, function() {
                         console.log("Playlist is subscribed!");
                     });
