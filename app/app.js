@@ -359,6 +359,14 @@ var App = function()
                 window.location.href = "spotify:app:chirp";
             });
 
+            m.session.observe(m.EVENT.STATECHANGED, function() {
+               var args = m.session.state;
+               if(args == 2 || args == 4) {
+                  console.log("Session state changed!");
+                  $(".page").hide();   // Hide all sections 
+               }
+            });
+
             m.application.observe(m.EVENT.ARGUMENTSCHANGED, eventHandler);
             spm.getTopAlbums(onTopAlbumsLookupReturn);
             eventHandler(); //when reloading the app, make sure the existing selected tab works
