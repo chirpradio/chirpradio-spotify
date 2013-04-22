@@ -363,8 +363,13 @@ var App = function()
                var args = m.session.state;
                if(args == 2 || args == 4) {
                   console.log("Session state changed!");
+                  //https://developer.spotify.com/technologies/apps/docs/a5a59ca068.html
                   $(".page").hide();   // Hide all sections 
+                  $("#header").hide();   // Hide header
                }
+               else if (args == 1) {
+                  eventHandler();
+               }            
             });
 
             m.application.observe(m.EVENT.ARGUMENTSCHANGED, eventHandler);
