@@ -331,9 +331,14 @@ a.see_more {
   float: left;
   width: auto;
 }
-.verbose div.detailwrap,
+.verbose div.detailwrap {
+  min-height: 164px;
+}
 .verbose button {
-  position: absolute !important;
+  top: 0;
+  margin: 5px 0px 5px 0px;
+  clear: left;
+  float: left;
 }
 
 .verbose div.detailwrap {
@@ -359,15 +364,6 @@ a.see_more {
   clear: both;
   display: absolute;
   padding: 20px 20px 20px 0px;
-}
-
-.verbose button#savePlaylist {
-  margin: 0px 0 0 173px;
-  top: 127px;
-}
-.verbose button#share_button {
-  margin: 0px 0 0 173px;
-  top: 160px; 
 }
 
 @media (min-width: 434px) and (max-width: 662px) {
