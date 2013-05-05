@@ -128,6 +128,9 @@ header nav a[href^="http:"]::after {
   margin: 20px auto;
   width: 856px;
 }
+.page.best_of {
+width: 643px;
+}
 
 .tracks {
   margin: 20px auto 0;
@@ -284,7 +287,8 @@ a.see_more {
 
 @media (min-width: 0px) and (max-width: 434px) {
   .tracks,
-  .page {
+  .page,
+  .page.best_of {
     width: auto;
   }
   
@@ -368,7 +372,8 @@ a.see_more {
 
 @media (min-width: 434px) and (max-width: 662px) {
   .tracks,
-  .page {
+  .page,
+  .page.best_of {
     width: 440px;
     margin: 20px auto;
   }
@@ -405,6 +410,9 @@ a.see_more {
   .page {
     margin: 20px auto;
     width: 856px;
+  }
+  .page.best_of {
+    width: 643px;
   }
   .tracks {
     width: 1075px;
