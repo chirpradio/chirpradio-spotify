@@ -3,7 +3,7 @@ sp  = getSpotifyApi(1);
 var spm = sp.require("app/spotify-metadata"),
     m   = sp.require('$api/models'),
     ui  = sp.require("sp://import/scripts/ui"),
- views  = sp.require("sp://import/scripts/api/views");
+ views  = sp.require("$api/views");
 
 var BEST_OF_OVERVIEW_NUM_ALBUMS = 3;
 var BEST_OF_OVERVIEW_TOTAL_ALBUMS = 30;
@@ -359,20 +359,29 @@ var App = function()
                 window.location.href = "spotify:app:chirp";
             });
 
+            m.application.observe(m.EVENT.ARGUMENTSCHANGED, eventHandler);
+
+            //See //https://developer.spotify.com/technologies/apps/docs/a5a59ca068.html
             m.session.observe(m.EVENT.STATECHANGED, function() {
                var args = m.session.state;
                if(args == 2 || args == 4) {
-                  console.log("Session state changed!");
-                  //https://developer.spotify.com/technologies/apps/docs/a5a59ca068.html
+                  console.log("Session state changed -- app is offline");
+                  m.application.observe(m.EVENT.ARGUMENTSCHANGED, function() { //disable tabs when in offline mode
+                    $(".page").hide();
+                    $("#header").hide();
+                  });
+                  
                   $(".page").hide();   // Hide all sections 
                   $("#header").hide();   // Hide header
                }
-               else if (args == 1) {
+               else {
+                  console.log("Session state changed -- app is online");
+                  m.application.observe(m.EVENT.ARGUMENTSCHANGED, eventHandler);
                   eventHandler();
                }            
             });
 
-            m.application.observe(m.EVENT.ARGUMENTSCHANGED, eventHandler);
+            
             spm.getTopAlbums(onTopAlbumsLookupReturn);
             eventHandler(); //when reloading the app, make sure the existing selected tab works
             return this;
